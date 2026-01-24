@@ -2,31 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cltkjfjoaoy0n" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_4gt5v"]
 [ext_resource type="PackedScene" uid="uid://cvfm81wc0kba3" path="res://doctor/doctor_v001.glb" id="2_4gt5v"]
-
-[sub_resource type="GDScript" id="GDScript_fq6nm"]
-resource_name = "RayCast3DController"
-script/source = "extends RayCast3D
-
-
-var pkbl: Pickable 
-
-
-func _physics_process(delta: float) -> void:
-	if is_colliding():
-		var col = get_collider()
-		if col is Pickable:
-			pkbl = col
-			pkbl.on_hover()
-		if Input.is_action_just_released(\"ui_action\"):
-			print(\"button!!\")
-			print(get_collision_point())
-	
-	elif pkbl != null:
-		pkbl.on_unhover()
-		
-	
-	pass
-"
+[ext_resource type="Script" uid="uid://p6a0e65c7leo" path="res://doctor/RayCast3DController.gd" id="2_k0vwo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
 
@@ -57,7 +33,7 @@ target_position = Vector3(0, 0, -10)
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 1, 0, 1)
 debug_shape_thickness = 1
-script = SubResource("GDScript_fq6nm")
+script = ExtResource("2_k0vwo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=648097127]
 shape = SubResource("CapsuleShape3D_li7ud")
