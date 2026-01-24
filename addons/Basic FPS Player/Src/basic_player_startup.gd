@@ -69,15 +69,18 @@ var head_start_pos : Vector3
 # Current player tick, used in head bob calculation
 var tick = 0
 
+
 func _ready():
+	
 	if Engine.is_editor_hint():
 		return
-
+	
 	# Capture mouse if set to true
 	if CAPTURE_ON_START:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 	head_start_pos = $Head.position
+
 
 func _physics_process(delta):
 	if Engine.is_editor_hint():
@@ -96,6 +99,7 @@ func _physics_process(delta):
 			head_bob_motion()
 		reset_head_bob(delta)
 
+
 func _process(delta):
 	if Engine.is_editor_hint():
 		return
@@ -103,6 +107,7 @@ func _process(delta):
 	if !UPDATE_PLAYER_ON_PHYS_STEP:
 		move_player(delta)
 		rotate_player(delta)
+
 
 func _input(event):
 	if Engine.is_editor_hint():
@@ -112,6 +117,7 @@ func _input(event):
 	if event is InputEventMouseMotion && Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		set_rotation_target(event.relative)
 
+
 func set_rotation_target(mouse_motion : Vector2):
 	# Add player target to the mouse -x input
 	rotation_target_player += -mouse_motion.x * KEY_BIND_MOUSE_SENS
@@ -120,6 +126,7 @@ func set_rotation_target(mouse_motion : Vector2):
 	# Clamp rotation
 	if CLAMP_HEAD_ROTATION:
 		rotation_target_head = clamp(rotation_target_head, deg_to_rad(CLAMP_HEAD_ROTATION_MIN), deg_to_rad(CLAMP_HEAD_ROTATION_MAX))
+
 	
 func rotate_player(delta):
 	if MOUSE_ACCEL:
@@ -131,6 +138,7 @@ func rotate_player(delta):
 		# If mouse accel is turned off, simply set to target
 		quaternion = Quaternion(Vector3.UP, rotation_target_player)
 		$Head.quaternion = Quaternion(Vector3.RIGHT, rotation_target_head)
+	
 	
 func move_player(delta):
 	# Check if not on floor
@@ -158,11 +166,13 @@ func move_player(delta):
 
 	move_and_slide()
 
+
 func head_bob_motion():
 	var pos = Vector3.ZERO
 	pos.y += sin(tick * HEAD_BOB_FREQUENCY) * HEAD_BOB_AMPLITUDE
 	pos.x += cos(tick * HEAD_BOB_FREQUENCY/2) * HEAD_BOB_AMPLITUDE * 2
 	$Head.position += pos
+
 
 func reset_head_bob(delta):
 	# Lerp back to the staring position
