@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://b4t1m3iwebbgd"]
 
 [ext_resource type="Script" uid="uid://d4bwym2d4rqvc" path="res://environment/pickable.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cpcr5t8fp3qki" path="res://UI/aim.svg" id="1_5vw27"]
 [ext_resource type="Environment" uid="uid://g6rb3fcogefc" path="res://environment/new_environment.tres" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cpr7dcmuqvsfr" path="res://doctor/doctor.tscn" id="2_h2yge"]
 [ext_resource type="AudioStream" uid="uid://de5a22wqmepy8" path="res://environment/select_randomizer.tres" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://d0yenfp56ye7k" path="res://environment/Hospital_Trolley/hospital_trolley.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b6b02to10lews" path="res://environment/Surgery_Tools_Height_Rez/surgery_tools_height_rez.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b4ar8h5od4w0j" path="res://shark_white/shark_white.tscn" id="7_272bh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
 size = Vector3(50, 0, 50)
@@ -24,57 +26,90 @@ emission_enabled = true
 emission = Color(0.17254902, 0.53333336, 0.44705883, 1)
 emission_energy_multiplier = 0.0
 
-[node name="main" type="Node3D" unique_id=1602029322]
+[node name="main" type="Node" unique_id=1442225596]
 
-[node name="Environment" type="Node" parent="." unique_id=684621475]
+[node name="Control" type="Control" parent="." unique_id=869053827]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Sun" type="DirectionalLight3D" parent="Environment" unique_id=806458990]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=399213560]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5vw27")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=899077045]
+
+[node name="Environment" type="Node" parent="Node3D" unique_id=684621475]
+
+[node name="Sun" type="DirectionalLight3D" parent="Node3D/Environment" unique_id=806458990]
 transform = Transform3D(1, 0, 0, 0, 0.022791684, 0.9997402, 0, -0.9997402, 0.022791684, 1.99157, 9.78125, -4.48814)
 light_energy = 0.1
 shadow_enabled = true
 
-[node name="Enivroment" type="WorldEnvironment" parent="Environment" unique_id=1317216898]
+[node name="Enivroment" type="WorldEnvironment" parent="Node3D/Environment" unique_id=1317216898]
 environment = ExtResource("1_lquwl")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Environment/Enivroment" unique_id=237275024]
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D/Environment/Enivroment" unique_id=237275024]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5299993, -3.2132487)
 
-[node name="floor" type="StaticBody3D" parent="Environment" unique_id=572012109]
+[node name="floor" type="StaticBody3D" parent="Node3D/Environment" unique_id=572012109]
 metadata/_edit_group_ = true
 
-[node name="Collider" type="CollisionShape3D" parent="Environment/floor" unique_id=1332008435]
+[node name="Collider" type="CollisionShape3D" parent="Node3D/Environment/floor" unique_id=1332008435]
 shape = SubResource("BoxShape3D_caja7")
 
-[node name="Mesh" type="MeshInstance3D" parent="Environment/floor" unique_id=799423611]
+[node name="Mesh" type="MeshInstance3D" parent="Node3D/Environment/floor" unique_id=799423611]
 mesh = SubResource("PlaneMesh_6b5j0")
 
-[node name="cube" type="StaticBody3D" parent="Environment" unique_id=1259352028 node_paths=PackedStringArray("mesh_instance_3d")]
+[node name="cube" type="StaticBody3D" parent="Node3D/Environment" unique_id=1259352028 node_paths=PackedStringArray("mesh_instance_3d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -3)
 script = ExtResource("1_0xm2m")
 mesh_instance_3d = NodePath("MeshInstance3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/cube" unique_id=1593907346]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Environment/cube" unique_id=1593907346]
 shape = SubResource("ConvexPolygonShape3D_0xm2m")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/cube" unique_id=960275655]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Environment/cube" unique_id=960275655]
 mesh = SubResource("BoxMesh_0xm2m")
 surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Environment/cube" unique_id=632604655]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node3D/Environment/cube" unique_id=632604655]
 stream = ExtResource("3_7mycd")
 volume_db = -15.0
 
-[node name="Hospital Trolley" parent="Environment" unique_id=1577706018 instance=ExtResource("3_h2yge")]
+[node name="Hospital Trolley" parent="Node3D/Environment" unique_id=1577706018 instance=ExtResource("3_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="Surgery_Tools_Height_Rez" parent="Environment" unique_id=317864155 instance=ExtResource("4_1bvp3")]
+[node name="Surgery_Tools_Height_Rez" parent="Node3D/Environment" unique_id=317864155 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(0.0053372337, 0, 0, 0, 0.0053372337, 0, 0, 0, 0.0053372337, -0.036588028, 0.7961608, -2.992193)
 
-[node name="Doctor" parent="." unique_id=1034775726 instance=ExtResource("2_h2yge")]
+[node name="Doctor" parent="Node3D" unique_id=1034775726 instance=ExtResource("2_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1126921, -1.1262302)
 CAPTURE_ON_START = true
 
-[editable path="Environment/Hospital Trolley"]
-[editable path="Environment/Hospital Trolley/Hospital Trolley"]
-[editable path="Doctor"]
-[editable path="Doctor/doctor"]
+[node name="Camera3D" parent="Node3D/Doctor/Head" parent_id_path=PackedInt32Array(1034775726, 793444959) index="0" unique_id=1192519235]
+current = true
+
+[node name="shark_out" parent="Node3D" unique_id=668646842 instance=ExtResource("7_272bh")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.7898774, -7.033004)
+
+[editable path="Node3D/Environment/Hospital Trolley"]
+[editable path="Node3D/Environment/Hospital Trolley/Hospital Trolley"]
+[editable path="Node3D/Doctor"]
+[editable path="Node3D/Doctor/doctor"]
