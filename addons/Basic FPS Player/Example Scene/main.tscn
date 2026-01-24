@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://vupfism0y8ub"]
+
+[ext_resource type="PackedScene" uid="uid://cpr7dcmuqvsfr" path="res://doctor/doctor.tscn" id="1_hh7m2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
+size = Vector3(50, 0, 50)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6b5j0"]
+size = Vector2(50, 50)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3cqxm"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_i1cfu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1juj6"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1r4tq"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="Gradient" id="Gradient_t6m8x"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o7yir"]
+gradient = SubResource("Gradient_t6m8x")
+fill_from = Vector2(0.401099, 1)
+fill_to = Vector2(0.450549, 0)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_msuu0"]
+panorama = SubResource("GradientTexture2D_o7yir")
+
+[sub_resource type="Sky" id="Sky_4ggmq"]
+sky_material = SubResource("PanoramaSkyMaterial_msuu0")
+
+[sub_resource type="Environment" id="Environment_4mccc"]
+sky = SubResource("Sky_4ggmq")
+ambient_light_source = 3
+
+[node name="main" type="Node3D" unique_id=1602029322]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=572012109]
+
+[node name="Collider" type="CollisionShape3D" parent="Floor" unique_id=1332008435]
+shape = SubResource("BoxShape3D_caja7")
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor" unique_id=799423611]
+mesh = SubResource("PlaneMesh_6b5j0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1369682519]
+transform = Transform3D(8.609346, 5.2511573, 0.8478817, -5.2892766, 8.622281, 0.30695117, -0.563125, -0.70428157, 10.079746, -12.3987, 6.30559, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=6309634]
+shape = SubResource("ConvexPolygonShape3D_3cqxm")
+
+[node name="Cube" type="MeshInstance3D" parent="StaticBody3D" unique_id=497030790]
+transform = Transform3D(1, -3.655441e-08, -1.1175871e-08, -6.7520887e-09, 1.0000001, 7.450581e-09, 0, 7.450581e-09, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_i1cfu")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1188710112]
+transform = Transform3D(2.3394, -7.04204, 6.8789, 0.399539, 7.13256, 7.16585, -9.83616, -1.38514, 1.92713, 9.80706, 5.95309, -16.603)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=996906691]
+shape = SubResource("ConvexPolygonShape3D_1juj6")
+
+[node name="Cube2" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1202223924]
+transform = Transform3D(0.99999994, 0, -1.4901161e-08, 0, 0.99999994, -5.5879354e-09, 0, -1.4901161e-08, 0.99999994, 0, 0, 0)
+mesh = SubResource("BoxMesh_i1cfu")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1576829229]
+transform = Transform3D(4.2763324, -1.5875908, 4.630609, 3.9049027, 4.8142953, -1.9555808, -2.9520707, 4.068429, 4.1210637, 14.8415, 5.95309, 8.53617)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=1167119188]
+shape = SubResource("ConvexPolygonShape3D_1r4tq")
+
+[node name="Cube3" type="MeshInstance3D" parent="StaticBody3D3" unique_id=2029721945]
+transform = Transform3D(0.99999994, 2.9802322e-08, 2.9802322e-08, -2.9802322e-08, 1, 2.9802322e-08, 2.9802322e-08, 2.9802322e-08, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_i1cfu")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=806458990]
+transform = Transform3D(1, 0, 0, 0, -0.993258, 0.115925, 0, -0.115925, -0.993258, 1.99157, 9.78125, -4.48814)
+shadow_enabled = true
+
+[node name="Enivroment" type="WorldEnvironment" parent="." unique_id=1317216898]
+environment = SubResource("Environment_4mccc")
+
+[node name="Basic FPS Player2" parent="." unique_id=1034775726 instance=ExtResource("1_hh7m2")]

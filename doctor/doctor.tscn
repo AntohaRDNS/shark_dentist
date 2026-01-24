@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cpr7dcmuqvsfr"]
+
+[ext_resource type="Script" uid="uid://cltkjfjoaoy0n" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_4gt5v"]
+[ext_resource type="PackedScene" uid="uid://cvfm81wc0kba3" path="res://doctor/doctor_v001.glb" id="2_4gt5v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
+
+[sub_resource type="GDScript" id="GDScript_4gt5v"]
+script/source = "extends Node3D
+
+
+func _input(event):
+	if event is InputEventKey:
+		if (event as InputEventKey).keycode == KEY_5:
+			$AnimationPlayer.play(\"punch_elbow_69\")
+	pass
+"
+
+[node name="Doctor" type="CharacterBody3D" unique_id=1034775726]
+script = ExtResource("1_4gt5v")
+metadata/_edit_group_ = true
+
+[node name="Head" type="Node3D" parent="." unique_id=793444959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1192519235]
+cull_mask = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=648097127]
+shape = SubResource("CapsuleShape3D_li7ud")
+
+[node name="doctor" parent="." unique_id=734342218 instance=ExtResource("2_4gt5v")]
+transform = Transform3D(-1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, -1, 0, -1, 0)
+script = SubResource("GDScript_4gt5v")
+
+[node name="Ch16_Body1_001" parent="doctor/Collection/Armature/Skeleton3D" parent_id_path=PackedInt32Array(734342218, 2107582333) index="1" unique_id=182111343]
+layers = 2
+
+[node name="Ch16_Cap" parent="doctor/Collection/Armature/Skeleton3D" parent_id_path=PackedInt32Array(734342218, 2107582333) index="2" unique_id=902925213]
+layers = 2
+
+[node name="Ch16_Eyelashes" parent="doctor/Collection/Armature/Skeleton3D" parent_id_path=PackedInt32Array(734342218, 2107582333) index="3" unique_id=925774204]
+layers = 2
+
+[node name="Ch16_Mask" parent="doctor/Collection/Armature/Skeleton3D" parent_id_path=PackedInt32Array(734342218, 2107582333) index="4" unique_id=675281134]
+layers = 2
+
+[node name="AnimationPlayer" parent="doctor" index="1" unique_id=645041265]
+autoplay = &"walk_32"
+
+[editable path="doctor"]
