@@ -109,8 +109,8 @@ current = true
 [node name="shark_white" parent="." unique_id=619287941 instance=ExtResource("8_5vw27")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 3.5867763, -13.572598)
 
-[node name="Marker3D" parent="shark_white" index="2" unique_id=1081343957]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17656672, -0.33240163, 1.274967)
+[node name="Marker3D" type="Marker3D" parent="." unique_id=897263398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66, 3.55, -7.71)
 
 [editable path="Node3D/Environment/Hospital Trolley"]
 [editable path="Node3D/Environment/Hospital Trolley/Hospital Trolley"]

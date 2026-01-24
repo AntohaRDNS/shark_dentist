@@ -7,7 +7,16 @@ var pkbl: Pickable
 func _physics_process(delta: float) -> void:
 	
 	if is_colliding():
+		
 		var col = get_collider()
+		
+		if Input.is_action_just_pressed("ui_action"):
+			var t = col.owner
+			if t is SharkMaterialsController:
+				var col_point: Vector3 = get_collision_point()
+				t.freeze(col_point)
+			pass
+		
 		
 		# if col is old Pickable
 		if pkbl == col: 
