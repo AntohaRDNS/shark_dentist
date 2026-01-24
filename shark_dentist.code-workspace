@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"godotTools.editorPath.godot4": "/home/antohardns/Applications/godot/bin/godot.linuxbsd.editor.x86_64"
+	}
+}
