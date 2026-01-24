@@ -1,0 +1,14 @@
+[gd_resource type="Environment" format=3 uid="uid://g6rb3fcogefc"]
+
+[ext_resource type="Texture2D" uid="uid://dro3sqmq7symm" path="res://environment/industrial_wooden_attic_1k.exr" id="1_jjnnh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_k4ra3"]
+panorama = ExtResource("1_jjnnh")
+
+[sub_resource type="Sky" id="Sky_4ggmq"]
+sky_material = SubResource("PanoramaSkyMaterial_k4ra3")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_4ggmq")
+ambient_light_source = 3
