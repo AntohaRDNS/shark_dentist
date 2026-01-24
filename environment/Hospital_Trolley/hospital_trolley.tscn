@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d0yenfp56ye7k"]
+
+[ext_resource type="Script" uid="uid://d4bwym2d4rqvc" path="res://environment/pickable.gd" id="1_01y35"]
+[ext_resource type="PackedScene" uid="uid://m8eana3y03va" path="res://environment/Hospital_Trolley/Hospital Trolley.glb" id="1_ljoge"]
+[ext_resource type="Texture2D" uid="uid://gi8jclrf0ej7" path="res://environment/Hospital_Trolley/Hospital Trolley_Hospital Trolley_Trolley_BaseColor.webp" id="3_c70id"]
+[ext_resource type="Texture2D" uid="uid://hu5wtunjwhvh" path="res://environment/Hospital_Trolley/Hospital Trolley_Hospital Trolley_Trolley_Metallic-Hospital Trolley_Trolley_Roughness.webp" id="4_oomu6"]
+[ext_resource type="Texture2D" uid="uid://pe5q1ktt10j3" path="res://environment/Hospital_Trolley/Hospital Trolley_Hospital Trolley_Trolley_Normal.webp" id="5_brtje"]
+[ext_resource type="AudioStream" uid="uid://de5a22wqmepy8" path="res://environment/select_randomizer.tres" id="6_cr01w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ljoge"]
+size = Vector3(1.0592425, 0.9137668, 0.6044561)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clfnp"]
+resource_name = "Trolley_Trolley_0_mat.002"
+cull_mode = 2
+albedo_texture = ExtResource("3_c70id")
+metallic = 1.0
+metallic_texture = ExtResource("4_oomu6")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_oomu6")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("3_c70id")
+normal_enabled = true
+normal_texture = ExtResource("5_brtje")
+
+[node name="Hospital Trolley" type="StaticBody3D" unique_id=1577706018 node_paths=PackedStringArray("mesh_instance_3d")]
+script = ExtResource("1_01y35")
+mesh_instance_3d = NodePath("Hospital Trolley/Trolley_Trolley_0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=465172143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2516975e-06, 0.45627093, 0.02303195)
+shape = SubResource("BoxShape3D_ljoge")
+
+[node name="Hospital Trolley" parent="." unique_id=323681817 instance=ExtResource("1_ljoge")]
+
+[node name="Trolley_Trolley_0" parent="Hospital Trolley" index="0" unique_id=648330524]
+surface_material_override/0 = SubResource("StandardMaterial3D_clfnp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1664705068]
+stream = ExtResource("6_cr01w")
+volume_db = -15.0
+
+[editable path="Hospital Trolley"]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b6b02to10lews"]
+
+[ext_resource type="PackedScene" uid="uid://cf226yu2gkdqj" path="res://environment/Surgery_Tools_Height_Rez/Surgery_Tools_Height_Rez.glb" id="1_igx0b"]
+
+[node name="Surgery_Tools_Height_Rez" unique_id=317864155 instance=ExtResource("1_igx0b")]
