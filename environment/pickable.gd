@@ -8,7 +8,7 @@ extends StaticBody3D
 
 var tween: Tween
 
-const PICK_TIME: float = 0.15
+const PICK_TIME: float = 0.1
 
 
 func pick()-> void:

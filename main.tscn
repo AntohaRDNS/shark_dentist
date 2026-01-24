@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://de5a22wqmepy8" path="res://environment/select_randomizer.tres" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://d0yenfp56ye7k" path="res://environment/Hospital_Trolley/hospital_trolley.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b6b02to10lews" path="res://environment/Surgery_Tools_Height_Rez/surgery_tools_height_rez.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://b4ar8h5od4w0j" path="res://shark_white/shark_white.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://1vir6lew26s2" path="res://shark_white/shark_white.scn" id="8_5vw27"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
 size = Vector3(50, 0, 50)
@@ -106,10 +106,14 @@ CAPTURE_ON_START = true
 [node name="Camera3D" parent="Node3D/Doctor/Head" parent_id_path=PackedInt32Array(1034775726, 793444959) index="0" unique_id=1192519235]
 current = true
 
-[node name="shark_out" parent="Node3D" unique_id=668646842 instance=ExtResource("7_272bh")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.7898774, -7.033004)
+[node name="shark_white" parent="." unique_id=619287941 instance=ExtResource("8_5vw27")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 3.5867763, -13.572598)
+
+[node name="Marker3D" parent="shark_white" index="2" unique_id=1081343957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17656672, -0.33240163, 1.274967)
 
 [editable path="Node3D/Environment/Hospital Trolley"]
 [editable path="Node3D/Environment/Hospital Trolley/Hospital Trolley"]
 [editable path="Node3D/Doctor"]
 [editable path="Node3D/Doctor/doctor"]
+[editable path="shark_white"]
