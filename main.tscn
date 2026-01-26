@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0yenfp56ye7k" path="res://environment/Hospital_Trolley/hospital_trolley.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b6b02to10lews" path="res://environment/Surgery_Tools_Height_Rez/surgery_tools_height_rez.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://1vir6lew26s2" path="res://shark_white/shark_white.scn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cuql24wiqoaqy" path="res://environment/Metal_Plate/metal_plate.tscn" id="8_kek77"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
 size = Vector3(50, 0, 50)
@@ -106,8 +107,23 @@ CAPTURE_ON_START = true
 [node name="Camera3D" parent="Node3D/Doctor/Head" parent_id_path=PackedInt32Array(1034775726, 793444959) index="0" unique_id=1192519235]
 current = true
 
-[node name="shark_white" parent="." unique_id=619287941 instance=ExtResource("8_5vw27")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 3.5867763, -13.572598)
+[node name="Metal_Plate2" parent="Node3D" unique_id=894638966 instance=ExtResource("8_kek77")]
+transform = Transform3D(1.1330297, 0, 0, 0, 1.1330297, 0, 0, 0, 1.1330297, -0.0018763542, 1.050923, -8.800227)
+
+[node name="Metal_Plate3" parent="Node3D" unique_id=1444844380 instance=ExtResource("8_kek77")]
+transform = Transform3D(1.1620222, 0, 0, 0, 1.1224273, -0.30075347, 0, 0.30075347, 1.1224273, -0.0018763542, 0.47133502, -4.3758373)
+
+[node name="shark_white" parent="." unique_id=1037740828 instance=ExtResource("8_5vw27")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 5.230431, -17.538431)
+
+[node name="Skeleton3D" parent="shark_white/rig_deform" parent_id_path=PackedInt32Array(1037740828, 1001463315) index="1" unique_id=1429984510]
+bones/6/rotation = Quaternion(0.36263052, -0.0007989421, -0.0003108819, 0.93193257)
+
+[node name="BoneAttachment3D_teeth_down" parent="shark_white/rig_deform/Skeleton3D" index="5" unique_id=1204252351]
+transform = Transform3D(0.99999845, 3.401806e-10, -0.0017145908, -0.0013087264, -0.6460601, -0.7632866, -0.0011077285, 0.7632871, -0.6460588, 1.29087244e-11, -0.2872983, 0.78808403)
+
+[node name="AnimationTree" parent="shark_white" index="2" unique_id=667497958]
+parameters/mouth_open_blend/blend_amount = 1.0
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=897263398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66, 3.55, -7.71)

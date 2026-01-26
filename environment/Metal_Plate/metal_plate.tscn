@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://cuql24wiqoaqy"]
+
+[ext_resource type="PackedScene" uid="uid://bgbcji2m07f1t" path="res://environment/Metal_Plate/Metal_Plate.glb" id="1_cbot5"]
+[ext_resource type="Material" uid="uid://cbfjxjrwy8eap" path="res://environment/Metal_Plate/Metal_Plate.material" id="2_ngg6q"]
+[ext_resource type="Texture2D" uid="uid://deoxogf8r5gwx" path="res://environment/Metal_Plate/Metal_Plate_metal_plate_2_Kopie.png" id="3_q6a14"]
+[ext_resource type="Texture2D" uid="uid://d3e0jvs4ho2hr" path="res://environment/Metal_Plate/Metal_Plate_metal_plate_rough.png" id="4_gfhkk"]
+[ext_resource type="Texture2D" uid="uid://c1f44jiwbmv11" path="res://environment/Metal_Plate/Metal_Plate_metal_plate_N.png" id="5_mtra3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwpaq"]
+resource_name = "Metal_Plate"
+cull_mode = 2
+albedo_texture = ExtResource("3_q6a14")
+metallic_texture = ExtResource("4_gfhkk")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_gfhkk")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("5_mtra3")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_taimv"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "Metal_Plate",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i4uoj"]
+resource_name = "Collection_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_lwpaq"),
+"name": "Metal_Plate",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_taimv")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6a14"]
+size = Vector3(4.0043945, 0.001, 4.0046997)
+
+[node name="Collection" unique_id=399627165 instance=ExtResource("1_cbot5")]
+
+[node name="Metal_Plate" parent="." index="0" unique_id=472156357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0038196, 0, 1.0076553)
+surface_material_override/0 = ExtResource("2_ngg6q")
+
+[node name="Metal_Plate2" type="MeshInstance3D" parent="." index="1" unique_id=2131001165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0038196, 0, -0.9968213)
+mesh = SubResource("ArrayMesh_i4uoj")
+surface_material_override/0 = ExtResource("2_ngg6q")
+
+[node name="Metal_Plate3" type="MeshInstance3D" parent="." index="2" unique_id=328582407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9991025, 0, 1.0076553)
+mesh = SubResource("ArrayMesh_i4uoj")
+surface_material_override/0 = ExtResource("2_ngg6q")
+
+[node name="Metal_Plate4" type="MeshInstance3D" parent="." index="3" unique_id=1274689327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9991025, 0, -0.9968213)
+mesh = SubResource("ArrayMesh_i4uoj")
+surface_material_override/0 = ExtResource("2_ngg6q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="4" unique_id=1668695410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030947924, 5e-06, 0.005528569)
+shape = SubResource("BoxShape3D_q6a14")

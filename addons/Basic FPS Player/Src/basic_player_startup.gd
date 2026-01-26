@@ -108,8 +108,20 @@ func _process(delta):
 		move_player(delta)
 		rotate_player(delta)
 
+var is_look_freezed: bool = false
 
 func _input(event):
+	
+	if event is InputEventAction:
+		if event.is_action_pressed("ui_cancel"):
+			Input.mouse_mode = Input.MOUSE_MODE_CONFINED		
+		pass
+		
+	if event is InputEventAction:
+		if event.is_action_pressed("ui_action"):
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		pass
+	
 	if Engine.is_editor_hint():
 		return
 		
