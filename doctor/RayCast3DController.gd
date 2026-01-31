@@ -1,7 +1,7 @@
 extends RayCast3D
 
 
-var pkbl: Pickable 
+var interactable: Interactable 
 
 
 func _physics_process(delta: float) -> void:
@@ -19,22 +19,22 @@ func _physics_process(delta: float) -> void:
 		
 		
 		# if col is old Pickable
-		if pkbl == col: 
+		if interactable == col: 
 			pass
 		
 		# if col is new Pickable
-		elif col is Pickable:
-			#if pkbl != null:
-				#pkbl.on_unhover()
-			pkbl = col
-			pkbl.on_hover()
+		elif col is Interactable:
+			#if interactable != null:
+				#interactable.on_unhover()
+			interactable = col
+			interactable.on_hover()
 		
 		# if col not Pickable release old Pickable
-		elif pkbl != null:
-			pkbl.on_unhover()
-			pkbl = null
+		elif interactable != null:
+			interactable.on_unhover()
+			interactable = null
 
 	# if not col release old Pickable
-	elif pkbl != null:
-		pkbl.on_unhover()
-		pkbl = null
+	elif interactable != null:
+		interactable.on_unhover()
+		interactable = null

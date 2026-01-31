@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://b4t1m3iwebbgd"]
 
-[ext_resource type="Script" uid="uid://d4bwym2d4rqvc" path="res://environment/pickable.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://cpcr5t8fp3qki" path="res://UI/aim.svg" id="1_5vw27"]
 [ext_resource type="Environment" uid="uid://g6rb3fcogefc" path="res://environment/new_environment.tres" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cpr7dcmuqvsfr" path="res://doctor/doctor.tscn" id="2_h2yge"]
-[ext_resource type="AudioStream" uid="uid://de5a22wqmepy8" path="res://environment/select_randomizer.tres" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://d0yenfp56ye7k" path="res://environment/Hospital_Trolley/hospital_trolley.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b6b02to10lews" path="res://environment/Surgery_Tools_Height_Rez/surgery_tools_height_rez.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://1vir6lew26s2" path="res://shark_white/shark_white.scn" id="8_5vw27"]
@@ -16,15 +14,334 @@ size = Vector3(50, 0, 50)
 [sub_resource type="PlaneMesh" id="PlaneMesh_6b5j0"]
 size = Vector2(50, 50)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0xm2m"]
-points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-albedo_color = Color(0.17124975, 0.5315503, 0.44789714, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+roughness = 0.25
 emission_enabled = true
-emission = Color(0.17254902, 0.53333336, 0.44705883, 1)
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vw27"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efxa6"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg77c"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycdy4"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vivmo"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cqfq"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yaehf"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_074og"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82xsv"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_getpj"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ryguw"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d13ii"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1u8w0"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0odxb"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lswn8"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6jrf"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuqvo"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsp4k"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq58d"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_seu75"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_htxhm"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jq2sk"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4k2k6"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rl1p"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ok6jj"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_facbu"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1qrp"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_come4"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8e4i"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lmeg"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cp0l"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2t1y"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gngh3"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n3wm"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnost"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnkbs"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6a44"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cbny"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrvbo"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uypp3"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_blkrb"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abqjc"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iyjs"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4w656"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e71vb"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnkwl"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vke2r"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uit24"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruth0"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm4vd"]
+roughness = 0.25
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
 [node name="main" type="Node" unique_id=1442225596]
@@ -78,27 +395,20 @@ shape = SubResource("BoxShape3D_caja7")
 [node name="Mesh" type="MeshInstance3D" parent="Node3D/Environment/floor" unique_id=799423611]
 mesh = SubResource("PlaneMesh_6b5j0")
 
-[node name="cube" type="StaticBody3D" parent="Node3D/Environment" unique_id=1259352028 node_paths=PackedStringArray("mesh_instance_3d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -3)
-script = ExtResource("1_0xm2m")
-mesh_instance_3d = NodePath("MeshInstance3D")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Environment/cube" unique_id=1593907346]
-shape = SubResource("ConvexPolygonShape3D_0xm2m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Environment/cube" unique_id=960275655]
-mesh = SubResource("BoxMesh_0xm2m")
-surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node3D/Environment/cube" unique_id=632604655]
-stream = ExtResource("3_7mycd")
-volume_db = -15.0
-
-[node name="Hospital Trolley" parent="Node3D/Environment" unique_id=1577706018 instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-
 [node name="Surgery_Tools_Height_Rez" parent="Node3D/Environment" unique_id=317864155 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(0.0053372337, 0, 0, 0, 0.0053372337, 0, 0, 0, 0.0053372337, -0.036588028, 0.7961608, -2.992193)
+
+[node name="Metal_Plate2" parent="Node3D/Environment" unique_id=894638966 instance=ExtResource("8_kek77")]
+transform = Transform3D(1.1330297, 0, 0, 0, 1.1330297, 0, 0, 0, 1.1330297, -0.0018763542, 1.050923, -8.800227)
+
+[node name="Metal_Plate3" parent="Node3D/Environment" unique_id=1444844380 instance=ExtResource("8_kek77")]
+transform = Transform3D(1.1620222, 0, 0, 0, 1.1224273, -0.30075347, 0, 0.30075347, 1.1224273, -0.0018763542, 0.47133502, -4.3758373)
+
+[node name="hospital_trolley" parent="Node3D/Environment" unique_id=787631394 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="AudioStreamPlayer" parent="Node3D/Environment/hospital_trolley" index="1" unique_id=1646404018]
+volume_db = 0.0
 
 [node name="Doctor" parent="Node3D" unique_id=1034775726 instance=ExtResource("2_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1126921, -1.1262302)
@@ -107,29 +417,240 @@ CAPTURE_ON_START = true
 [node name="Camera3D" parent="Node3D/Doctor/Head" parent_id_path=PackedInt32Array(1034775726, 793444959) index="0" unique_id=1192519235]
 current = true
 
-[node name="Metal_Plate2" parent="Node3D" unique_id=894638966 instance=ExtResource("8_kek77")]
-transform = Transform3D(1.1330297, 0, 0, 0, 1.1330297, 0, 0, 0, 1.1330297, -0.0018763542, 1.050923, -8.800227)
+[node name="shark_white" parent="Node3D" unique_id=1554260323 instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8134074, -17.538431)
 
-[node name="Metal_Plate3" parent="Node3D" unique_id=1444844380 instance=ExtResource("8_kek77")]
-transform = Transform3D(1.1620222, 0, 0, 0, 1.1224273, -0.30075347, 0, 0.30075347, 1.1224273, -0.0018763542, 0.47133502, -4.3758373)
-
-[node name="shark_white" parent="." unique_id=1037740828 instance=ExtResource("8_5vw27")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 5.230431, -17.538431)
-
-[node name="Skeleton3D" parent="shark_white/rig_deform" parent_id_path=PackedInt32Array(1037740828, 1001463315) index="1" unique_id=1429984510]
+[node name="Skeleton3D" parent="Node3D/shark_white/rig_deform" parent_id_path=PackedInt32Array(1554260323, 695375006) index="1" unique_id=1944311487]
 bones/6/rotation = Quaternion(0.36263052, -0.0007989421, -0.0003108819, 0.93193257)
 
-[node name="BoneAttachment3D_teeth_down" parent="shark_white/rig_deform/Skeleton3D" index="5" unique_id=1204252351]
-transform = Transform3D(0.99999845, 3.401806e-10, -0.0017145908, -0.0013087264, -0.6460601, -0.7632866, -0.0011077285, 0.7632871, -0.6460588, 1.29087244e-11, -0.2872983, 0.78808403)
+[node name="teeth_down" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="2" unique_id=256199864]
+surface_material_override/0 = SubResource("StandardMaterial3D_272bh")
 
-[node name="AnimationTree" parent="shark_white" index="2" unique_id=667497958]
+[node name="teeth_down_001" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="3" unique_id=1169908522]
+surface_material_override/0 = SubResource("StandardMaterial3D_5vw27")
+
+[node name="teeth_down_002" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="4" unique_id=1683229046]
+surface_material_override/0 = SubResource("StandardMaterial3D_kek77")
+
+[node name="teeth_down_003" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="5" unique_id=185156563]
+surface_material_override/0 = SubResource("StandardMaterial3D_4c57u")
+
+[node name="teeth_down_004" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="6" unique_id=895256100]
+surface_material_override/0 = SubResource("StandardMaterial3D_efxa6")
+
+[node name="teeth_down_005" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="7" unique_id=609796247]
+surface_material_override/0 = SubResource("StandardMaterial3D_dg77c")
+
+[node name="teeth_down_006" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="8" unique_id=1655742224]
+surface_material_override/0 = SubResource("StandardMaterial3D_ycdy4")
+
+[node name="teeth_down_007" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="9" unique_id=169540936]
+surface_material_override/0 = SubResource("StandardMaterial3D_w48qg")
+
+[node name="teeth_down_008" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="10" unique_id=1479278256]
+surface_material_override/0 = SubResource("StandardMaterial3D_vivmo")
+
+[node name="teeth_down_009" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="11" unique_id=1371777188]
+surface_material_override/0 = SubResource("StandardMaterial3D_2cqfq")
+
+[node name="teeth_down_010" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="12" unique_id=2139237075]
+surface_material_override/0 = SubResource("StandardMaterial3D_yaehf")
+
+[node name="teeth_down_011" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="13" unique_id=38622979]
+surface_material_override/0 = SubResource("StandardMaterial3D_074og")
+
+[node name="teeth_down_012" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="14" unique_id=1827784376]
+surface_material_override/0 = SubResource("StandardMaterial3D_cegan")
+
+[node name="teeth_down_013" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="15" unique_id=2129116988]
+surface_material_override/0 = SubResource("StandardMaterial3D_82xsv")
+
+[node name="teeth_down_014" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="16" unique_id=1036089269]
+surface_material_override/0 = SubResource("StandardMaterial3D_getpj")
+
+[node name="teeth_down_015" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="17" unique_id=1481679455]
+surface_material_override/0 = SubResource("StandardMaterial3D_ryguw")
+
+[node name="teeth_down_016" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="18" unique_id=680815141]
+surface_material_override/0 = SubResource("StandardMaterial3D_d13ii")
+
+[node name="teeth_down_017" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="19" unique_id=1383113305]
+surface_material_override/0 = SubResource("StandardMaterial3D_1u8w0")
+
+[node name="teeth_down_018" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="20" unique_id=1417825538]
+surface_material_override/0 = SubResource("StandardMaterial3D_0odxb")
+
+[node name="teeth_down_019" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="21" unique_id=227334030]
+surface_material_override/0 = SubResource("StandardMaterial3D_lswn8")
+
+[node name="teeth_down_020" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="22" unique_id=1932174661]
+surface_material_override/0 = SubResource("StandardMaterial3D_a6jrf")
+
+[node name="teeth_down_021" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="23" unique_id=1697256526]
+surface_material_override/0 = SubResource("StandardMaterial3D_xuqvo")
+
+[node name="teeth_down_022" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="24" unique_id=324762004]
+surface_material_override/0 = SubResource("StandardMaterial3D_qsp4k")
+
+[node name="teeth_down_023" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="25" unique_id=900253787]
+surface_material_override/0 = SubResource("StandardMaterial3D_kq58d")
+
+[node name="teeth_down_024" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="26" unique_id=846737685]
+surface_material_override/0 = SubResource("StandardMaterial3D_seu75")
+
+[node name="teeth_down_025" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="27" unique_id=1753010945]
+surface_material_override/0 = SubResource("StandardMaterial3D_htxhm")
+
+[node name="teeth_down_026" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="28" unique_id=80753471]
+surface_material_override/0 = SubResource("StandardMaterial3D_jq2sk")
+
+[node name="teeth_down_027" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="29" unique_id=937047823]
+surface_material_override/0 = SubResource("StandardMaterial3D_4k2k6")
+
+[node name="teeth_up" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="30" unique_id=1717817006]
+surface_material_override/0 = SubResource("StandardMaterial3D_0rl1p")
+
+[node name="teeth_up_001" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="31" unique_id=1701735863]
+surface_material_override/0 = SubResource("StandardMaterial3D_ok6jj")
+
+[node name="teeth_up_002" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="32" unique_id=239292024]
+surface_material_override/0 = SubResource("StandardMaterial3D_facbu")
+
+[node name="teeth_up_003" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="33" unique_id=174149191]
+surface_material_override/0 = SubResource("StandardMaterial3D_b1qrp")
+
+[node name="teeth_up_004" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="34" unique_id=919524170]
+surface_material_override/0 = SubResource("StandardMaterial3D_come4")
+
+[node name="teeth_up_005" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="35" unique_id=1061081411]
+surface_material_override/0 = SubResource("StandardMaterial3D_h8e4i")
+
+[node name="teeth_up_006" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="36" unique_id=115334599]
+surface_material_override/0 = SubResource("StandardMaterial3D_4lmeg")
+
+[node name="teeth_up_007" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="37" unique_id=2003057285]
+surface_material_override/0 = SubResource("StandardMaterial3D_0cp0l")
+
+[node name="teeth_up_008" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="38" unique_id=2051189566]
+surface_material_override/0 = SubResource("StandardMaterial3D_d2t1y")
+
+[node name="teeth_up_009" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="39" unique_id=722452775]
+surface_material_override/0 = SubResource("StandardMaterial3D_gngh3")
+
+[node name="teeth_up_010" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="40" unique_id=1710451849]
+surface_material_override/0 = SubResource("StandardMaterial3D_0n3wm")
+
+[node name="teeth_up_011" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="41" unique_id=1059822541]
+surface_material_override/0 = SubResource("StandardMaterial3D_qnost")
+
+[node name="teeth_up_012" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="42" unique_id=1585935195]
+surface_material_override/0 = SubResource("StandardMaterial3D_wnkbs")
+
+[node name="teeth_up_013" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="43" unique_id=49601312]
+surface_material_override/0 = SubResource("StandardMaterial3D_f6a44")
+
+[node name="teeth_up_014" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="44" unique_id=1625018549]
+surface_material_override/0 = SubResource("StandardMaterial3D_0cbny")
+
+[node name="teeth_up_015" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="45" unique_id=1323331617]
+surface_material_override/0 = SubResource("StandardMaterial3D_hrvbo")
+
+[node name="teeth_up_016" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="46" unique_id=1068755580]
+surface_material_override/0 = SubResource("StandardMaterial3D_uypp3")
+
+[node name="teeth_up_017" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="47" unique_id=494229317]
+surface_material_override/0 = SubResource("StandardMaterial3D_blkrb")
+
+[node name="teeth_up_018" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="48" unique_id=2054865425]
+surface_material_override/0 = SubResource("StandardMaterial3D_abqjc")
+
+[node name="teeth_up_019" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="49" unique_id=1064892166]
+surface_material_override/0 = SubResource("StandardMaterial3D_6iyjs")
+
+[node name="teeth_up_020" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="50" unique_id=1489830077]
+surface_material_override/0 = SubResource("StandardMaterial3D_4w656")
+
+[node name="teeth_up_021" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="51" unique_id=1690796905]
+surface_material_override/0 = SubResource("StandardMaterial3D_e71vb")
+
+[node name="teeth_up_022" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="52" unique_id=2084022556]
+surface_material_override/0 = SubResource("StandardMaterial3D_rnkwl")
+
+[node name="teeth_up_023" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="53" unique_id=12160631]
+surface_material_override/0 = SubResource("StandardMaterial3D_vke2r")
+
+[node name="teeth_up_024" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="54" unique_id=866697397]
+surface_material_override/0 = SubResource("StandardMaterial3D_uit24")
+
+[node name="teeth_up_025" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="55" unique_id=442481477]
+surface_material_override/0 = SubResource("StandardMaterial3D_ruth0")
+
+[node name="teeth_up_026" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="56" unique_id=785622397]
+surface_material_override/0 = SubResource("StandardMaterial3D_rm4vd")
+
+[node name="BoneAttachment3D_teeth_down" parent="Node3D/shark_white/rig_deform/Skeleton3D" index="58" unique_id=2016136107]
+transform = Transform3D(0.99999845, 3.401806e-10, -0.0017145908, -0.0013087264, -0.6460601, -0.7632866, -0.0011077285, 0.7632871, -0.6460588, 7.745235e-11, -1.7237898, 4.728504)
+
+[node name="AnimationTree" parent="Node3D/shark_white" index="2" unique_id=667497958]
 parameters/mouth_open_blend/blend_amount = 1.0
 
-[node name="Marker3D" type="Marker3D" parent="." unique_id=897263398]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66, 3.55, -7.71)
-
-[editable path="Node3D/Environment/Hospital Trolley"]
-[editable path="Node3D/Environment/Hospital Trolley/Hospital Trolley"]
+[editable path="Node3D/Environment/hospital_trolley"]
+[editable path="Node3D/Environment/hospital_trolley/Hospital Trolley"]
 [editable path="Node3D/Doctor"]
 [editable path="Node3D/Doctor/doctor"]
-[editable path="shark_white"]
+[editable path="Node3D/shark_white"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_001"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_002"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_003"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_004"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_005"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_006"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_007"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_008"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_009"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_010"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_011"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_012"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_013"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_014"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_015"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_016"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_017"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_018"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_019"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_020"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_021"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_022"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_023"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_024"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_025"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_up/offset/teeth_up_026"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_001"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_002"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_003"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_004"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_005"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_006"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_007"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_008"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_009"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_010"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_011"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_012"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_013"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_014"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_015"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_016"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_017"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_018"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_019"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_020"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_021"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_022"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_023"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_024"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_025"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_026"]
+[editable path="Node3D/shark_white/rig_deform/Skeleton3D/BoneAttachment3D_teeth_down/offset/teeth_down_027"]

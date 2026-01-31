@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bmg1wifhch1qx"]
+
+[ext_resource type="Script" uid="uid://d4bwym2d4rqvc" path="res://Interactable/Interactable.gd" id="1_msfch"]
+[ext_resource type="AudioStream" uid="uid://de5a22wqmepy8" path="res://Interactable/select_randomizer.tres" id="2_dljwh"]
+
+[node name="Interactable" type="StaticBody3D" unique_id=787631394 node_paths=PackedStringArray("audio_stream_player")]
+script = ExtResource("1_msfch")
+audio_stream_player = NodePath("AudioStreamPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=99988757]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1646404018]
+stream = ExtResource("2_dljwh")
+volume_db = -10.0

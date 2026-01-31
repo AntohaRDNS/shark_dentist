@@ -1,8 +1,0 @@
-[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://de5a22wqmepy8"]
-
-[ext_resource type="AudioStream" uid="uid://c3rcf8pp3iijn" path="res://environment/select.mp3" id="1_bradb"]
-
-[resource]
-random_pitch = 1.3348398
-streams_count = 1
-stream_0/stream = ExtResource("1_bradb")
