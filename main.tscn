@@ -344,6 +344,15 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_272bh"]
+friction = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_272bh"]
+size = Vector3(0.5, 0.5, 0.5)
+
 [node name="main" type="Node" unique_id=1442225596]
 
 [node name="Control" type="Control" parent="." unique_id=869053827]
@@ -593,6 +602,18 @@ transform = Transform3D(0.99999845, 3.401806e-10, -0.0017145908, -0.0013087264, 
 
 [node name="AnimationTree" parent="Node3D/shark_white" index="2" unique_id=667497958]
 parameters/mouth_open_blend/blend_amount = 1.0
+
+[node name="StaticBody3D" type="RigidBody3D" parent="." unique_id=1403041804]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6653786, 1.2941139, -1.6430354)
+physics_material_override = SubResource("PhysicsMaterial_272bh")
+can_sleep = false
+continuous_cd = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1652986811]
+shape = SubResource("BoxShape3D_272bh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=415012245]
+mesh = SubResource("BoxMesh_272bh")
 
 [editable path="Node3D/Environment/hospital_trolley"]
 [editable path="Node3D/Environment/hospital_trolley/Hospital Trolley"]

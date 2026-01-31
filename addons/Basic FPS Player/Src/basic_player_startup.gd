@@ -73,12 +73,12 @@ var tick = 0
 
 func _ready():
 	
-	get_tree().create_timer(2)
+	get_tree().create_timer(5)
 	
 	if Engine.is_editor_hint():
 		return
 	
-	# Capture mouse if set to true
+	# Capture mouse if set to trawwdue
 	if CAPTURE_ON_START:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 

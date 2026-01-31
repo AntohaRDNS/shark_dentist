@@ -2,30 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bmg1wifhch1qx" path="res://Interactable/Interactable.tscn" id="1_0e7na"]
 [ext_resource type="PackedScene" uid="uid://m8eana3y03va" path="res://environment/Hospital_Trolley/Hospital Trolley.glb" id="1_ljoge"]
+[ext_resource type="Material" uid="uid://bsojvh8ihtive" path="res://environment/Hospital_Trolley/Trolley_Trolley_0.material" id="3_mbp6i"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mbp6i"]
 points = PackedVector3Array(0.5191259, 0.8994667, 0.22619149, 0.5380063, 0.8820206, 0.2335659, -0.4371038, 0.075081855, 0.33446348, -0.5380063, 0.8987658, -0.23712713, 0.38665253, -0.009006321, -0.27067846, 0.5043019, 0.8820206, -0.27067846, -0.48422524, 0.8972855, 0.25747424, 0.4371038, -0.009006321, 0.19995366, -0.38665253, 0.024665147, -0.28760636, 0.5043019, 0.8650943, 0.26717812, 0.38376093, 0.029714813, 0.27123505, -0.38665253, -0.009006321, 0.31759647, 0.5380063, 0.8987658, -0.23712713, -0.5043019, 0.8820206, -0.27067846, -0.5380063, 0.8820206, 0.2335659, -0.47070286, 0.024665147, -0.203454, 0.45385066, 0.007919937, 0.19995366, 0.405468, 0.039745197, -0.26033235, -0.42109925, 0.007922616, -0.24371895, -0.40350473, 0.007919937, 0.33446348, 0.38693714, 0.042266317, -0.2748355, 0.40118697, 0.108399995, 0.2721642, -0.519112, 0.8994548, 0.22618607, -0.4202516, 0.092008114, 0.33446348, 0.48422524, 0.8972855, 0.25747424, 0.5380063, 0.8820206, -0.22026011, -0.4202516, 0.007919937, 0.33446348, 0.48308545, 0.8962406, -0.2583051, 0.40049756, 0.012726555, 0.2557206, -0.5380063, 0.8820206, -0.22026011, -0.48308545, 0.8962406, -0.2583051, 0.51856756, 0.8989869, -0.22771296)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e7na"]
-load_path = "res://.godot/imported/Hospital Trolley_Hospital Trolley_Trolley_BaseColor.webp-ef620e8bd7469f3217f60840d686662f.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mbp6i"]
-load_path = "res://.godot/imported/Hospital Trolley_Hospital Trolley_Trolley_Metallic-Hospital Trolley_Trolley_Roughness.webp-b521ff1596ddf5c9b438a63519970bef.s3tc.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_frjkr"]
-load_path = "res://.godot/imported/Hospital Trolley_Hospital Trolley_Trolley_Normal.webp-fd835fa266a3bc710ccdc03c41c3ece5.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hj70"]
-resource_name = "Trolley_Trolley_0_mat.002"
-cull_mode = 2
-albedo_texture = SubResource("CompressedTexture2D_0e7na")
-metallic = 1.0
-metallic_texture = SubResource("CompressedTexture2D_mbp6i")
-metallic_texture_channel = 2
-roughness_texture = SubResource("CompressedTexture2D_mbp6i")
-roughness_texture_channel = 1
-normal_enabled = true
-normal_texture = SubResource("CompressedTexture2D_frjkr")
 
 [node name="hospital_trolley" unique_id=787631394 node_paths=PackedStringArray("mesh_instance_3d") instance=ExtResource("1_0e7na")]
 mesh_instance_3d = NodePath("Hospital Trolley/Trolley_Trolley_0")
@@ -33,9 +13,9 @@ mesh_instance_3d = NodePath("Hospital Trolley/Trolley_Trolley_0")
 [node name="CollisionShape3D" parent="." index="0" unique_id=99988757]
 shape = SubResource("ConvexPolygonShape3D_mbp6i")
 
-[node name="Hospital Trolley" parent="." index="2" unique_id=462026209 instance=ExtResource("1_ljoge")]
+[node name="Hospital Trolley" parent="." index="2" unique_id=1434223152 instance=ExtResource("1_ljoge")]
 
-[node name="Trolley_Trolley_0" parent="Hospital Trolley" index="0" unique_id=648330524]
-surface_material_override/0 = SubResource("StandardMaterial3D_2hj70")
+[node name="Trolley_Trolley_0" parent="Hospital Trolley" index="0" unique_id=2013502426]
+surface_material_override/0 = ExtResource("3_mbp6i")
 
 [editable path="Hospital Trolley"]
