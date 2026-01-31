@@ -52,7 +52,8 @@ func _enter_tree():
 @export_category("Advanced")
 @export var UPDATE_PLAYER_ON_PHYS_STEP := true	# When check player is moved and rotated in _physics_process (fixed fps)
 												# Otherwise player is updated in _process (uncapped)
-
+												
+var IS_INPUT_PAUSED: bool = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 # To keep track of current speed and acceleration
@@ -72,6 +73,8 @@ var tick = 0
 
 func _ready():
 	
+	get_tree().create_timer(2)
+	
 	if Engine.is_editor_hint():
 		return
 	
@@ -89,7 +92,7 @@ func _physics_process(delta):
 	# Increment player tick, used in head bob motion
 	tick += 1
 	
-	if UPDATE_PLAYER_ON_PHYS_STEP:
+	if UPDATE_PLAYER_ON_PHYS_STEP and !IS_INPUT_PAUSED:
 		move_player(delta)
 		rotate_player(delta)
 	
@@ -104,7 +107,7 @@ func _process(delta):
 	if Engine.is_editor_hint():
 		return
 
-	if !UPDATE_PLAYER_ON_PHYS_STEP:
+	if !UPDATE_PLAYER_ON_PHYS_STEP and !IS_INPUT_PAUSED:
 		move_player(delta)
 		rotate_player(delta)
 
@@ -112,19 +115,17 @@ var is_look_freezed: bool = false
 
 func _input(event):
 	
-	if event is InputEventAction:
-		if event.is_action_pressed("ui_cancel"):
-			Input.mouse_mode = Input.MOUSE_MODE_CONFINED		
-		pass
-		
-	if event is InputEventAction:
-		if event.is_action_pressed("ui_action"):
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		pass
-	
 	if Engine.is_editor_hint():
 		return
+	
+	if event.is_action_pressed("ui_cancel"):
+		IS_INPUT_PAUSED = true
+		pass
 		
+	if event.is_action_pressed("ui_action"):
+		IS_INPUT_PAUSED = false
+		pass	
+	
 	# Listen for mouse movement and check if mouse is captured
 	if event is InputEventMouseMotion && Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		set_rotation_target(event.relative)
