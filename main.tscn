@@ -2,11 +2,34 @@
 
 [ext_resource type="Texture2D" uid="uid://cpcr5t8fp3qki" path="res://UI/aim.svg" id="1_5vw27"]
 [ext_resource type="Environment" uid="uid://g6rb3fcogefc" path="res://environment/new_environment.tres" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://wnv02hhcx8l3" path="res://InGameTexturePainter/Scripts/TexturePainter.gd" id="2_dg77c"]
 [ext_resource type="PackedScene" uid="uid://cpr7dcmuqvsfr" path="res://doctor/doctor.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://d0yenfp56ye7k" path="res://environment/Hospital_Trolley/hospital_trolley.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://d2f8xg6ly3coo" path="res://InGameTexturePainter/Scripts/VertexPositionMapper.gd" id="3_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://b6b02to10lews" path="res://environment/Surgery_Tools_Height_Rez/surgery_tools_height_rez.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dd0qx2mrv87kb" path="res://InGameTexturePainter/Scripts/ViewportDraw.gd" id="4_w48qg"]
+[ext_resource type="Texture2D" uid="uid://bq8q1758p52pi" path="res://InGameTexturePainter/Brush.png" id="5_vivmo"]
+[ext_resource type="Shader" uid="uid://bjv8nu4ugnk5f" path="res://InGameTexturePainter/Scripts/Painter.gdshader" id="6_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://1vir6lew26s2" path="res://shark_white/shark_white.scn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://cuql24wiqoaqy" path="res://environment/Metal_Plate/metal_plate.tscn" id="8_kek77"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3tgo1"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yaehf"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_2cqfq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_cchva"]
+radius = 2.0
+height = 4.0
+radial_segments = 32
+rings = 16
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3tgo1"]
+radius = 2.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_caja7"]
 size = Vector3(50, 0, 50)
@@ -382,6 +405,44 @@ texture = ExtResource("1_5vw27")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=899077045]
 
+[node name="Painter" type="Node" parent="Node3D" unique_id=1874276756]
+
+[node name="TexturePainter" type="Node3D" parent="Node3D/Painter" unique_id=1826601570]
+script = ExtResource("2_dg77c")
+
+[node name="VertexPositionMapper" type="Node" parent="Node3D/Painter" unique_id=115262874]
+script = ExtResource("3_ycdy4")
+
+[node name="ViewportDraw" type="SubViewport" parent="Node3D/Painter" unique_id=1310278164]
+disable_3d = true
+gui_snap_controls_to_pixels = false
+size = Vector2i(1024, 1024)
+render_target_clear_mode = 1
+render_target_update_mode = 0
+script = ExtResource("4_w48qg")
+
+[node name="Brush" type="Sprite2D" parent="Node3D/Painter/ViewportDraw" unique_id=1799504380]
+modulate = Color(1, 1, 1, 0.160784)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_vivmo")
+
+[node name="Mesh" type="Node3D" parent="Node3D/Painter" unique_id=1644242491]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.9168816, 0)
+
+[node name="High" type="MeshInstance3D" parent="Node3D/Painter/Mesh" unique_id=2126065567]
+mesh = SubResource("SphereMesh_3tgo1")
+surface_material_override/0 = SubResource("ShaderMaterial_yaehf")
+
+[node name="Low" type="MeshInstance3D" parent="Node3D/Painter/Mesh" unique_id=655945860]
+visible = false
+mesh = SubResource("SphereMesh_cchva")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/Painter/Mesh" unique_id=463350357]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Painter/Mesh/StaticBody3D" unique_id=2053073511]
+shape = SubResource("SphereShape3D_3tgo1")
+
 [node name="Environment" type="Node" parent="Node3D" unique_id=684621475]
 
 [node name="Sun" type="DirectionalLight3D" parent="Node3D/Environment" unique_id=806458990]
@@ -420,14 +481,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 volume_db = 0.0
 
 [node name="Doctor" parent="Node3D" unique_id=1034775726 instance=ExtResource("2_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1126921, -1.1262302)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1620801e-07, 2.9097452, -6.9862394)
 CAPTURE_ON_START = true
 
 [node name="Camera3D" parent="Node3D/Doctor/Head" parent_id_path=PackedInt32Array(1034775726, 793444959) index="0" unique_id=1192519235]
 current = true
 
 [node name="shark_white" parent="Node3D" unique_id=1554260323 instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.8134074, -17.538431)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8289723, -17.283033)
 
 [node name="Skeleton3D" parent="Node3D/shark_white/rig_deform" parent_id_path=PackedInt32Array(1554260323, 695375006) index="1" unique_id=1944311487]
 bones/6/rotation = Quaternion(0.36263052, -0.0007989421, -0.0003108819, 0.93193257)
@@ -603,16 +664,16 @@ transform = Transform3D(0.99999845, 3.401806e-10, -0.0017145908, -0.0013087264, 
 [node name="AnimationTree" parent="Node3D/shark_white" index="2" unique_id=667497958]
 parameters/mouth_open_blend/blend_amount = 1.0
 
-[node name="StaticBody3D" type="RigidBody3D" parent="." unique_id=1403041804]
+[node name="StaticBody3D" type="RigidBody3D" parent="Node3D" unique_id=1403041804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6653786, 1.2941139, -1.6430354)
 physics_material_override = SubResource("PhysicsMaterial_272bh")
 can_sleep = false
 continuous_cd = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1652986811]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D" unique_id=1652986811]
 shape = SubResource("BoxShape3D_272bh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=415012245]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/StaticBody3D" unique_id=415012245]
 mesh = SubResource("BoxMesh_272bh")
 
 [editable path="Node3D/Environment/hospital_trolley"]

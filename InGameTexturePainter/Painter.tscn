@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dqxm8k7n2p5ro"]
+
+[ext_resource type="Script" uid="uid://wnv02hhcx8l3" path="res://InGameTexturePainter/Scripts/TexturePainter.gd" id="1_2y5yo"]
+[ext_resource type="Script" uid="uid://d2f8xg6ly3coo" path="res://InGameTexturePainter/Scripts/VertexPositionMapper.gd" id="2_3tgo1"]
+[ext_resource type="Shader" uid="uid://bjv8nu4ugnk5f" path="res://InGameTexturePainter/Scripts/Painter.gdshader" id="3_cchva"]
+[ext_resource type="PackedScene" uid="uid://bpk3xqy8c7hqo" path="res://InGameTexturePainter/player/Player.tscn" id="4_djokl"]
+[ext_resource type="Texture2D" uid="uid://bq8q1758p52pi" path="res://InGameTexturePainter/Brush.png" id="6_3tgo1"]
+[ext_resource type="Script" uid="uid://dd0qx2mrv87kb" path="res://InGameTexturePainter/Scripts/ViewportDraw.gd" id="6_xpfgk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3tgo1"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_cchva")
+
+[sub_resource type="SphereMesh" id="SphereMesh_cchva"]
+radius = 2.0
+height = 4.0
+radial_segments = 32
+rings = 16
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3tgo1"]
+radius = 2.0
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 1
+background_color = Color(0.3, 0.5, 0.7, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.6, 0.6, 0.6, 1)
+ambient_light_energy = 2.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1"]
+size = Vector3(2, 0.1, 2)
+
+[node name="Painter" type="Node" unique_id=1874276756]
+
+[node name="TexturePainter" type="Node3D" parent="." unique_id=1826601570]
+script = ExtResource("1_2y5yo")
+
+[node name="VertexPositionMapper" type="Node" parent="." unique_id=115262874]
+script = ExtResource("2_3tgo1")
+
+[node name="ViewportDraw" type="SubViewport" parent="." unique_id=1310278164]
+disable_3d = true
+gui_snap_controls_to_pixels = false
+size = Vector2i(1024, 1024)
+render_target_clear_mode = 1
+render_target_update_mode = 0
+script = ExtResource("6_xpfgk")
+
+[node name="Brush" type="Sprite2D" parent="ViewportDraw" unique_id=1799504380]
+modulate = Color(1, 1, 1, 0.160784)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_3tgo1")
+
+[node name="Mesh" type="Node3D" parent="." unique_id=1644242491]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 1.9168816, 0)
+
+[node name="High" type="MeshInstance3D" parent="Mesh" unique_id=2126065567]
+mesh = SubResource("SphereMesh_3tgo1")
+surface_material_override/0 = SubResource("ShaderMaterial_1")
+
+[node name="Low" type="MeshInstance3D" parent="Mesh" unique_id=655945860]
+visible = false
+mesh = SubResource("SphereMesh_cchva")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mesh" unique_id=463350357]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/StaticBody3D" unique_id=2053073511]
+shape = SubResource("SphereShape3D_3tgo1")
+
+[node name="Player" parent="." unique_id=8049105 instance=ExtResource("4_djokl")]
+transform = Transform3D(-4.3711374e-08, 0, -0.9999999, 0, 0.99999976, 0, 0.9999996, 0, -4.371139e-08, -12.029541, 3.87275, -1.5036291)
+collision_layer = 2
+
+[node name="Camera3D" parent="Player" index="2"]
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1285103678]
+environment = SubResource("Environment_1")
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1408812485]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1")
+
+[node name="GroundStaticBody" type="StaticBody3D" parent="Ground" unique_id=1055420298]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/GroundStaticBody" unique_id=2011252819]
+transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
+shape = SubResource("BoxShape3D_1")
+
+[editable path="Player"]
