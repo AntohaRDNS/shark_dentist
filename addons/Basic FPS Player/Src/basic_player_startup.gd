@@ -80,7 +80,6 @@ func _ready():
 	
 	# Capture mouse if set to trawwdue
 	if CAPTURE_ON_START:
-		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 	head_start_pos = $Head.position

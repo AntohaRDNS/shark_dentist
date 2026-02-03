@@ -23,7 +23,6 @@ func brush_size() -> float:
 	pass
 
 
-
 func clear_texture() -> void:
 	render_target_clear_mode = SubViewport.CLEAR_MODE_ONCE
 	render_target_update_mode = SubViewport.UPDATE_ONCE

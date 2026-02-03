@@ -1,8 +1,8 @@
 extends Node3D
 
-
-@onready var mesh_instance: MeshInstance3D = $"../Mesh/High"
-@onready var mesh_instance_low_poly: MeshInstance3D = $"../Mesh/Low"
+@export var mesh_instance: MeshInstance3D
+#@onready var mesh_instance: MeshInstance3D = $"../Mesh/High"
+#@onready var mesh_instance_low_poly: MeshInstance3D = $"../Mesh/Low"
 @onready var vertex_position_mapper = $"../VertexPositionMapper"
 @onready var viewport_draw: ViewportDraw = $"../ViewportDraw"
 
@@ -15,8 +15,9 @@ var tex_size: Vector2
 func _ready() -> void:
 	await get_tree().process_frame
 	
-	vertex_position_mapper.set_mesh(mesh_instance_low_poly)
-
+	#vertex_position_mapper.set_mesh(mesh_instance_low_poly)
+	vertex_position_mapper.set_mesh(mesh_instance)
+	
 	material = mesh_instance.get_surface_override_material(0)
 	material.set_shader_parameter("SplatMapTexture", viewport_draw.get_texture())
 	
@@ -34,7 +35,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(_delta: float) -> void:
 	if recheck:
 		var space_state = get_world_3d().direct_space_state
-		var camera: Camera3D = $"../../Doctor/Head/Camera3D"
+		var camera: Camera3D = $"../Doctor/Head/Camera3D"
 		#var camera: Camear3D = $"../Player/Camera3D"
 		
 		for ray_idx in range(rays_amount):
