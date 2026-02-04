@@ -10,12 +10,12 @@ func _physics_process(delta: float) -> void:
 		
 		var col = get_collider()
 		
-		if Input.is_action_just_pressed("ui_action"):
-			var t = col.owner
-			if t is SharkMaterialsController:
-				var col_point: Vector3 = get_collision_point()
-				t.freeze(col_point)
-			pass
+		#if Input.is_action_just_pressed("ui_action"):
+			#var t = col.owner
+			#if t is SharkMaterialsController:
+				#var col_point: Vector3 = get_collision_point()
+				#t.freeze(col_point)
+			#pass
 		
 		
 		# if col is old Pickable
@@ -24,8 +24,8 @@ func _physics_process(delta: float) -> void:
 		
 		# if col is new Pickable
 		elif col is Interactable:
-			#if interactable != null:
-				#interactable.on_unhover()
+			if interactable != null:
+				interactable.on_unhover()
 			interactable = col
 			interactable.on_hover()
 		
