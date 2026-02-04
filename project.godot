@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="shark_dentist"
-run/main_scene="uid://b4t1m3iwebbgd"
+run/main_scene="uid://bnv7c6iutjjva"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
