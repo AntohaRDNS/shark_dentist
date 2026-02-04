@@ -25,7 +25,7 @@ func on_hover() -> void:
 		tween = null
 	
 	tween = get_tree().create_tween()
-	#tween.tween_method(func(value): material.set("emission_energy_multiplier", value), material.get("emission_energy_multiplier"), 1.0, PICK_TIME).set_ease(Tween.EASE_IN) # tween from current value to 1
+	tween.tween_method(func(value): material.set("emission_energy_multiplier", value), material.get("emission_energy_multiplier"), 1.0, PICK_TIME).set_ease(Tween.EASE_IN) # tween from current value to 1
 	
 	audio_stream_player.play()
 	
@@ -38,6 +38,6 @@ func on_unhover() -> void:
 		tween.stop()
 		tween = null
 		
-	#tween = get_tree().create_tween()
-	#tween.tween_method(func(value): material.set("emission_energy_multiplier", value), material.get("emission_energy_multiplier"), 0.0, PICK_TIME).set_ease(Tween.EASE_IN) # tween from current value to 0
+	tween = get_tree().create_tween()
+	tween.tween_method(func(value): material.set("emission_energy_multiplier", value), material.get("emission_energy_multiplier"), 0.0, PICK_TIME).set_ease(Tween.EASE_IN) # tween from current value to 0
 	pass
