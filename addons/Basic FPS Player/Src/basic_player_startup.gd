@@ -1,4 +1,3 @@
-@tool
 extends CharacterBody3D
 
 var BasicFPSPlayerScene : PackedScene = preload("basic_player_head.tscn")
@@ -9,11 +8,11 @@ func _enter_tree():
 	if find_child("Head"):
 		addedHead = true
 	
-	if Engine.is_editor_hint() && !addedHead:
-		var s = BasicFPSPlayerScene.instantiate()
-		add_child(s)
-		s.owner = get_tree().edited_scene_root
-		addedHead = true
+	#if Engine.is_editor_hint() && !addedHead:
+		#var s = BasicFPSPlayerScene.instantiate()
+		#add_child(s)
+		#s.owner = get_tree().edited_scene_root
+		#addedHead = true
 
 ## PLAYER MOVMENT SCRIPT ##
 ###########################
@@ -65,31 +64,23 @@ var rotation_target_player : float
 var rotation_target_head : float
 
 # Used when bobing head
-var head_start_pos : Vector3
+@onready var head_start_pos : Vector3 = $Head.position
 
 # Current player tick, used in head bob calculation
 var tick = 0
 
 
 func _ready():
-	
-	get_tree().create_timer(10)
-	
-	if Engine.is_editor_hint():
-		return
-	
+		
 	# Capture mouse if set to trawwdue
 	if CAPTURE_ON_START:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-	head_start_pos = $Head.position
-
+		# error 
+		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		# work!
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
-	if Engine.is_editor_hint():
-		return
 	
-	# Increment player tick, used in head bob motion
 	tick += 1
 	
 	if UPDATE_PLAYER_ON_PHYS_STEP and !IS_INPUT_PAUSED:
@@ -104,8 +95,6 @@ func _physics_process(delta):
 
 
 func _process(delta):
-	if Engine.is_editor_hint():
-		return
 
 	if !UPDATE_PLAYER_ON_PHYS_STEP and !IS_INPUT_PAUSED:
 		move_player(delta)
@@ -114,9 +103,6 @@ func _process(delta):
 var is_look_freezed: bool = false
 
 func _input(event):
-	
-	if Engine.is_editor_hint():
-		return
 	
 	if event.is_action_pressed("ui_cancel"):
 		IS_INPUT_PAUSED = true

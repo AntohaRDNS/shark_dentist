@@ -5,10 +5,6 @@
 [ext_resource type="Script" uid="uid://p6a0e65c7leo" path="res://doctor/RayCast3DController.gd" id="2_k0vwo"]
 [ext_resource type="PackedScene" uid="uid://70u4dg76xrfg" path="res://environment/Syringe/Syringe.tscn" id="3_or6hh"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
-radius = 0.3149414
-height = 1.5209961
-
 [sub_resource type="GDScript" id="GDScript_4gt5v"]
 script/source = "extends Node3D
 
@@ -19,6 +15,10 @@ func _input(event):
 			$AnimationPlayer.play(\"punch_elbow_69\")
 	pass
 "
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
+radius = 0.3149414
+height = 1.5209961
 
 [node name="Doctor" type="CharacterBody3D" unique_id=1034775726]
 collision_layer = 3
@@ -42,10 +42,6 @@ script = ExtResource("2_k0vwo")
 [node name="Syringe" parent="Head/Camera3D" unique_id=1863408147 instance=ExtResource("3_or6hh")]
 transform = Transform3D(-6.1838956e-10, 0, 0.014147104, 0, 0.014147104, 0, -0.014147104, 0, -6.1838956e-10, 0.29357928, 0, -0.5203677)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=648097127]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23950195, 0)
-shape = SubResource("CapsuleShape3D_li7ud")
-
 [node name="doctor" parent="." unique_id=734342218 instance=ExtResource("2_4gt5v")]
 transform = Transform3D(-1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, -1, 0, -1, 0)
 script = SubResource("GDScript_4gt5v")
@@ -64,5 +60,9 @@ layers = 2
 
 [node name="AnimationPlayer" parent="doctor" index="1" unique_id=645041265]
 autoplay = &"walk_32"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=648097127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23950195, 0)
+shape = SubResource("CapsuleShape3D_li7ud")
 
 [editable path="doctor"]

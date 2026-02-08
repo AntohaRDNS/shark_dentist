@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bsi4s150euj4a"]
+
+[ext_resource type="PackedScene" uid="uid://cpr7dcmuqvsfr" path="res://doctor/doctor.tscn" id="1_6hk3s"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dfcka"]
+
+[sub_resource type="Sky" id="Sky_jmiot"]
+sky_material = SubResource("ProceduralSkyMaterial_dfcka")
+
+[sub_resource type="Environment" id="Environment_ddush"]
+background_mode = 2
+sky = SubResource("Sky_jmiot")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jck5d"]
+
+[sub_resource type="Compositor" id="Compositor_scouk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_scouk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfcka"]
+size = Vector3(2, 0.001, 2)
+
+[node name="Node3D" type="Node3D" unique_id=67415916]
+
+[node name="Doctor" parent="." unique_id=1034775726 instance=ExtResource("1_6hk3s")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=561287517]
+environment = SubResource("Environment_ddush")
+camera_attributes = SubResource("CameraAttributesPractical_jck5d")
+compositor = SubResource("Compositor_scouk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=458749604]
+transform = Transform3D(7.8462234, 0, 0, 0, 7.8462234, 0, 0, 0, 7.8462234, 0, -1.6060675, 0)
+mesh = SubResource("PlaneMesh_scouk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1166016787]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=53735101]
+shape = SubResource("BoxShape3D_dfcka")
+
+[editable path="Doctor"]
+[editable path="Doctor/doctor"]

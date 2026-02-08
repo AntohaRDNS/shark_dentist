@@ -35,7 +35,7 @@ func _input(event: InputEvent) -> void:
 func _physics_process(_delta: float) -> void:
 	if recheck:
 		var space_state = get_world_3d().direct_space_state
-		var camera: Camera3D = $"../Doctor/Head/Camera3D"
+		var camera: Camera3D = $"../../Doctor/Head/Camera3D"
 		#var camera: Camear3D = $"../Player/Camera3D"
 		
 		for ray_idx in range(rays_amount):

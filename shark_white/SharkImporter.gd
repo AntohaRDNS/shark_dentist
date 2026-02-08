@@ -80,20 +80,20 @@ func _add_collision_hierarchy_up(mesh_instance: MeshInstance3D):
 	if mesh == null:
 		return
 		
-	var interactable_scene: PackedScene = load("res://Interactable/Interactable.tscn")
-	var interactable: Interactable = interactable_scene.instantiate()
+	var tooth_scene: PackedScene = load("res://shark_white/Tooth.scn")
+	var tooth_: Tooth = tooth_scene.instantiate()
 	# Create StaticBody3D with original mesh name
-	interactable.name = mesh_instance.name
-	interactable.mesh_instance_3d = mesh_instance
+	tooth_.name = mesh_instance.name
+	tooth_.mesh_instance_3d = mesh_instance
 
-	offset_up.add_child(interactable)
-	interactable.owner = offset_up.owner
+	offset_up.add_child(tooth_)
+	tooth_.owner = offset_up.owner
 	
-	offset_up.set_editable_instance(interactable, true)
+	offset_up.set_editable_instance(tooth_, true)
 	
 
 	# Create CollisionShape3D with simplified convex shape
-	var collision_shape = interactable.find_child("CollisionShape3D", true, true)
+	var collision_shape = tooth_.find_child("CollisionShape3D", true, true)
 	collision_shape.shape = mesh.create_convex_shape()
 
 	print_rich("Post-import: Added collision hierarchy to [b]%s[/b]" % mesh_instance.name)
@@ -104,19 +104,19 @@ func _add_collision_hierarchy_down(mesh_instance: MeshInstance3D):
 	if mesh == null:
 		return
 	
-	var interactable_scene: PackedScene = load("res://Interactable/Interactable.tscn")
-	var interactable: Interactable = interactable_scene.instantiate()
+	var tooth_scene: PackedScene = load("res://shark_white/Tooth.scn")
+	var tooth_: Tooth = tooth_scene.instantiate()
 	# Create StaticBody3D with original mesh name
-	interactable.name = mesh_instance.name
-	interactable.mesh_instance_3d = mesh_instance
+	tooth_.name = mesh_instance.name
+	tooth_.mesh_instance_3d = mesh_instance
 
-	offset_down.add_child(interactable)
-	interactable.owner = offset_down.owner
+	offset_down.add_child(tooth_)
+	tooth_.owner = offset_down.owner
 	
-	offset_down.set_editable_instance(interactable, true)
+	offset_down.set_editable_instance(tooth_, true)
 	
 	# Create CollisionShape3D with simplified convex shape
-	var collision_shape = interactable.find_child("CollisionShape3D", true, true)
+	var collision_shape = tooth_.find_child("CollisionShape3D", true, true)
 	collision_shape.shape = mesh.create_convex_shape()
 
 	print_rich("Post-import: Added collision hierarchy to [b]%s[/b]" % mesh_instance.name)
