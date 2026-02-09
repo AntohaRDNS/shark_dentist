@@ -16,7 +16,7 @@ var interactable_state: InteractableState = InteractableState.default
 @onready var material: Material = (func() -> Material: return mesh_instance_3d.get_surface_override_material(0)).call()
 @export var audio_stream_player: AudioStreamPlayer
 var tween: Tween
-const PICK_TIME: float = 0.
+const PICK_TIME: float = 0.1
 var param_name: StringName = "emission_energy_multiplier"
 
 	
