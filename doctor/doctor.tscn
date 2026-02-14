@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cltkjfjoaoy0n" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_4gt5v"]
 [ext_resource type="PackedScene" uid="uid://cvfm81wc0kba3" path="res://doctor/doctor_v001.glb" id="2_4gt5v"]
 [ext_resource type="Script" uid="uid://p6a0e65c7leo" path="res://doctor/RayCast3DController.gd" id="2_k0vwo"]
-[ext_resource type="PackedScene" uid="uid://70u4dg76xrfg" path="res://environment/Syringe/Syringe.tscn" id="3_or6hh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
 radius = 0.3149414
@@ -28,8 +27,9 @@ debug_shape_custom_color = Color(0, 1, 0, 1)
 debug_shape_thickness = 1
 script = ExtResource("2_k0vwo")
 
-[node name="Syringe" parent="Head/Camera3D" unique_id=1863408147 instance=ExtResource("3_or6hh")]
-transform = Transform3D(-6.1838956e-10, 0, 0.014147104, 0, 0.014147104, 0, -0.014147104, 0, -6.1838956e-10, 0.29357928, 0, -0.5203677)
+[node name="Marker3D" type="Marker3D" parent="Head/Camera3D" unique_id=849826316]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.13696307, -0.2640381, -0.5203677)
+gizmo_extents = 0.95
 
 [node name="doctor" parent="." unique_id=734342218 instance=ExtResource("2_4gt5v")]
 transform = Transform3D(-1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, -1, 0, -1, 0)

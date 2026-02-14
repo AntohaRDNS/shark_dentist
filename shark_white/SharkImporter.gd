@@ -80,7 +80,7 @@ func _add_collision_hierarchy_up(mesh_instance: MeshInstance3D):
 	if mesh == null:
 		return
 		
-	var tooth_scene: PackedScene = load("res://shark_white/Tooth.scn")
+	var tooth_scene: PackedScene = load("res://shark_white/Tooth/Tooth.scn")
 	var tooth_: Tooth = tooth_scene.instantiate()
 	# Create StaticBody3D with original mesh name
 	tooth_.name = mesh_instance.name
@@ -104,7 +104,7 @@ func _add_collision_hierarchy_down(mesh_instance: MeshInstance3D):
 	if mesh == null:
 		return
 	
-	var tooth_scene: PackedScene = load("res://shark_white/Tooth.scn")
+	var tooth_scene: PackedScene = load("res://shark_white/Tooth/Tooth.scn")
 	var tooth_: Tooth = tooth_scene.instantiate()
 	# Create StaticBody3D with original mesh name
 	tooth_.name = mesh_instance.name

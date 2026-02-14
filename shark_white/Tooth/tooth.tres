@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" format=3 uid="uid://3xeycy4pe8vv"]
 
 [sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_i74dj"]
-constant = Color(0.8716997, 0.9364466, 0.99414676, 1)
+constant = Color(0.87058824, 0.9372549, 0.99607843, 1)
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_i74dj"]
 output_port_for_preview = 0
@@ -15,15 +15,20 @@ default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
 op_type = 2
 operator = 2
 
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_n652g"]
+constant = Color(0.87058824, 0.9372549, 0.99607843, 0.27450982)
+
 [resource]
 stencil/enabled = true
 stencil_flags/write = true
 nodes/vertex/0/position = Vector2(432, 144)
 nodes/fragment/0/position = Vector2(464, 176)
 nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_i74dj")
-nodes/fragment/2/position = Vector2(-160, 176)
+nodes/fragment/2/position = Vector2(-400, 96)
 nodes/fragment/3/node = SubResource("VisualShaderNodeFloatParameter_i74dj")
-nodes/fragment/3/position = Vector2(-240, 448)
+nodes/fragment/3/position = Vector2(-448, 448)
 nodes/fragment/5/node = SubResource("VisualShaderNodeVectorOp_2djl0")
-nodes/fragment/5/position = Vector2(128, 320)
-nodes/fragment/connections = PackedInt32Array(2, 0, 5, 0, 3, 0, 5, 1, 2, 0, 0, 0, 5, 0, 0, 5)
+nodes/fragment/5/position = Vector2(80, 304)
+nodes/fragment/6/node = SubResource("VisualShaderNodeColorConstant_n652g")
+nodes/fragment/6/position = Vector2(-400, 240)
+nodes/fragment/connections = PackedInt32Array(3, 0, 5, 1, 6, 0, 5, 0, 2, 0, 0, 0)

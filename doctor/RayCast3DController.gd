@@ -2,7 +2,8 @@ class_name RayCast3DController
 extends RayCast3D
 
 
-var interactable_cur: Interactable 
+@onready var marker_3d: Marker3D = $"../Marker3D"
+var interactable_selected: Interactable
 
 
 func _physics_process(delta: float) -> void:
@@ -11,19 +12,31 @@ func _physics_process(delta: float) -> void:
 		
 		var col = get_collider()
 		
+		# if placeholder try to release Interactable
+		if col is Placeholder:
+			if Input.is_action_just_pressed("ui_action"):
+				if marker_3d.get_child_count() > 0:
+					var i = marker_3d.get_child(0)
+					i.on_grab(col)
+					pass
+			print(col.name)
+			pass
+		
 		# if col is Interactable
 		if col is Interactable:			
 			# if current interactable already exist
-			if interactable_cur != null:
+			if interactable_selected != null:
 				# if current interactable not new
 				# ... unhover prev interactable
-				if interactable_cur != col:
+				if interactable_selected != col:
 					_release_interactable_cur()
 					# ... hover new interactable
 					_set_interactable_cur(col)
 				# if interactable is the same
 				else:
-					interactable_cur.while_hover()
+					if Input.is_action_just_pressed("ui_action"):
+						if marker_3d.get_child_count() == 0: interactable_selected.on_grab(marker_3d) # grab only if not grabb
+					interactable_selected.while_hover()
 					pass
 					
 			# if current Interactable not exist
@@ -31,22 +44,21 @@ func _physics_process(delta: float) -> void:
 				_set_interactable_cur(col)
 				pass
 				
-			
 		# if col is NOT Interactable
-		elif interactable_cur != null:
+		elif interactable_selected != null:
 			_release_interactable_cur()
 
 	# if not colliding unhover old Interactable
-	elif interactable_cur != null:
+	elif interactable_selected != null:
 		_release_interactable_cur()
 	
 	
 func _release_interactable_cur() -> void:
-	interactable_cur.on_unhover()
-	interactable_cur = null
+	interactable_selected.on_unhover()
+	interactable_selected = null
 	pass
 	
 	
 func _set_interactable_cur(_i: Interactable) -> void:
-	interactable_cur = _i
-	interactable_cur.on_hover()
+	interactable_selected = _i
+	interactable_selected.on_hover()
