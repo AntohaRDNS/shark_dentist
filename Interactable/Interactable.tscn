@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://d4bwym2d4rqvc" path="res://Interactable/Interactable.gd" id="1_msfch"]
 [ext_resource type="AudioStream" uid="uid://de5a22wqmepy8" path="res://Interactable/select_randomizer.tres" id="2_dljwh"]
 
-[node name="Interactable" type="StaticBody3D" unique_id=787631394 node_paths=PackedStringArray("audio_stream_player")]
+[node name="Interactable" type="RigidBody3D" unique_id=638998917 node_paths=PackedStringArray("audio_stream_player")]
+freeze = true
 script = ExtResource("1_msfch")
 audio_stream_player = NodePath("AudioStreamPlayer")
 

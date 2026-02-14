@@ -48,6 +48,17 @@ func on_unhover() -> void:
 	pass
 
 
+func on_grab(_target: Node3D) -> void:
+	super.on_grab(_target)
+	if _target is Placeholder:
+		freeze = true
+		pass
+	else:
+		freeze = false
+		pass
+	pass
+
+
 func on_activate() -> void:
 	super.on_activate()
 	

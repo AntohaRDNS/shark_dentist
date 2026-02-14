@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cltkjfjoaoy0n" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_4gt5v"]
 [ext_resource type="PackedScene" uid="uid://cvfm81wc0kba3" path="res://doctor/doctor_v001.glb" id="2_4gt5v"]
 [ext_resource type="Script" uid="uid://p6a0e65c7leo" path="res://doctor/RayCast3DController.gd" id="2_k0vwo"]
+[ext_resource type="Script" uid="uid://dbcxcnvjs3foh" path="res://doctor/Grabber.gd" id="3_or6hh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
 radius = 0.3149414
@@ -30,6 +31,7 @@ script = ExtResource("2_k0vwo")
 [node name="Marker3D" type="Marker3D" parent="Head/Camera3D" unique_id=849826316]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.13696307, -0.2640381, -0.5203677)
 gizmo_extents = 0.95
+script = ExtResource("3_or6hh")
 
 [node name="doctor" parent="." unique_id=734342218 instance=ExtResource("2_4gt5v")]
 transform = Transform3D(-1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, -1, 0, -1, 0)

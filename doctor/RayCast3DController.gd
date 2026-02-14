@@ -29,9 +29,9 @@ func _physics_process(delta: float) -> void:
 				# if current interactable not new
 				# ... unhover prev interactable
 				if interactable_selected != col:
-					_release_interactable_cur()
+					_unselect_interactable_cur()
 					# ... hover new interactable
-					_set_interactable_cur(col)
+					_select_interactable_cur(col)
 				# if interactable is the same
 				else:
 					if Input.is_action_just_pressed("ui_action"):
@@ -41,24 +41,24 @@ func _physics_process(delta: float) -> void:
 					
 			# if current Interactable not exist
 			else:
-				_set_interactable_cur(col)
+				_select_interactable_cur(col)
 				pass
 				
 		# if col is NOT Interactable
 		elif interactable_selected != null:
-			_release_interactable_cur()
+			_unselect_interactable_cur()
 
 	# if not colliding unhover old Interactable
 	elif interactable_selected != null:
-		_release_interactable_cur()
+		_unselect_interactable_cur()
 	
 	
-func _release_interactable_cur() -> void:
+func _unselect_interactable_cur() -> void:
 	interactable_selected.on_unhover()
 	interactable_selected = null
 	pass
 	
 	
-func _set_interactable_cur(_i: Interactable) -> void:
+func _select_interactable_cur(_i: Interactable) -> void:
 	interactable_selected = _i
 	interactable_selected.on_hover()

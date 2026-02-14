@@ -1,5 +1,5 @@
 class_name Interactable
-extends StaticBody3D
+extends RigidBody3D
 
 
 enum State
