@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		recheck = event.is_pressed()
 	
-	if event.is_action("clear_texture") && event.is_action_pressed("clear_texture"):
+	if event.is_action("ui_clear_texture") && event.is_action_pressed("ui_clear_texture"):
 		viewport_draw.clear_texture()
 
 

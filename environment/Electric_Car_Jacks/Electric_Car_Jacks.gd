@@ -3,32 +3,26 @@ extends Interactable
 
 @onready var animation_player: AnimationPlayer = $Electric_Car_Jacks/AnimationPlayer
 
-enum State 
+enum Electric_Car_JacksState 
 {
 	default,
 	growing,
 	grow
 }
 
-var state: State = State.default
+var state: Electric_Car_JacksState = Electric_Car_JacksState.default
 
 
 func _input(event) -> void:
-	if event.is_action("ui_activate") and interactable_state == State.default and state == State.default:
-		state = State.growing
-		activate()
-	pass
-
-
-func pick()-> void:
-	super.pick()
-	mesh_instance_3d.get_surface_override_material(0).set("albedo_color", Color.RED)
+	if event.is_action("ui_activate") and interactable_state == Electric_Car_JacksState.default and state == Electric_Car_JacksState.default:
+		state = Electric_Car_JacksState.growing
+		on_activate()
 	pass
 
 
 func on_hover() -> void:
 	super.on_hover()
-	
+
 	if tween != null:
 		tween.stop()
 		tween = null
@@ -44,6 +38,7 @@ func on_hover() -> void:
 
 func on_unhover() -> void:
 	super.on_unhover()
+		
 	if tween != null:
 		tween.stop()
 		tween = null
@@ -53,6 +48,8 @@ func on_unhover() -> void:
 	pass
 
 
-func activate() -> void:
+func on_activate() -> void:
+	super.on_activate()
+	
 	animation_player.play("grow_30")
 	pass

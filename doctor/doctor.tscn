@@ -5,18 +5,6 @@
 [ext_resource type="Script" uid="uid://p6a0e65c7leo" path="res://doctor/RayCast3DController.gd" id="2_k0vwo"]
 [ext_resource type="PackedScene" uid="uid://70u4dg76xrfg" path="res://environment/Syringe/Syringe.tscn" id="3_or6hh"]
 
-[sub_resource type="GDScript" id="GDScript_4gt5v"]
-script/source = "class_name Doctor
-extends Node3D
-
-
-func _input(event):
-	if event is InputEventKey:
-		if (event as InputEventKey).keycode == KEY_5:
-			$AnimationPlayer.play(\"punch_elbow_69\")
-	pass
-"
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_li7ud"]
 radius = 0.3149414
 height = 1.5209961
@@ -45,7 +33,6 @@ transform = Transform3D(-6.1838956e-10, 0, 0.014147104, 0, 0.014147104, 0, -0.01
 
 [node name="doctor" parent="." unique_id=734342218 instance=ExtResource("2_4gt5v")]
 transform = Transform3D(-1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, -1, 0, -1, 0)
-script = SubResource("GDScript_4gt5v")
 
 [node name="Ch16_Body1_001" parent="doctor/Collection/Armature/Skeleton3D" parent_id_path=PackedInt32Array(734342218, 2107582333) index="1" unique_id=182111343]
 layers = 2

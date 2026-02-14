@@ -1,7 +1,8 @@
+class_name RayCast3DController
 extends RayCast3D
 
 
-var interactable: Interactable 
+var interactable_cur: Interactable 
 
 
 func _physics_process(delta: float) -> void:
@@ -10,31 +11,42 @@ func _physics_process(delta: float) -> void:
 		
 		var col = get_collider()
 		
-		#if Input.is_action_just_pressed("ui_action"):
-			#var t = col.owner
-			#if t is SharkMaterialsController:
-				#var col_point: Vector3 = get_collision_point()
-				#t.freeze(col_point)
-			#pass
-		
-		
-		# if col is old Pickable
-		if interactable == col: 
-			pass
-		
-		# if col is new Pickable
-		elif col is Interactable:
-			if interactable != null:
-				interactable.on_unhover()
-			interactable = col
-			interactable.on_hover()
-		
-		# if col not Pickable release old Pickable
-		elif interactable != null:
-			interactable.on_unhover()
-			interactable = null
+		# if col is Interactable
+		if col is Interactable:			
+			# if current interactable already exist
+			if interactable_cur != null:
+				# if current interactable not new
+				# ... unhover prev interactable
+				if interactable_cur != col:
+					_release_interactable_cur()
+					# ... hover new interactable
+					_set_interactable_cur(col)
+				# if interactable is the same
+				else:
+					interactable_cur.while_hover()
+					pass
+					
+			# if current Interactable not exist
+			else:
+				_set_interactable_cur(col)
+				pass
+				
+			
+		# if col is NOT Interactable
+		elif interactable_cur != null:
+			_release_interactable_cur()
 
-	# if not col release old Pickable
-	elif interactable != null:
-		interactable.on_unhover()
-		interactable = null
+	# if not colliding unhover old Interactable
+	elif interactable_cur != null:
+		_release_interactable_cur()
+	
+	
+func _release_interactable_cur() -> void:
+	interactable_cur.on_unhover()
+	interactable_cur = null
+	pass
+	
+	
+func _set_interactable_cur(_i: Interactable) -> void:
+	interactable_cur = _i
+	interactable_cur.on_hover()

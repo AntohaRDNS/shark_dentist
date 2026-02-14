@@ -1,42 +1,117 @@
 [gd_scene format=3 uid="uid://bsi4s150euj4a"]
 
-[ext_resource type="PackedScene" uid="uid://cpr7dcmuqvsfr" path="res://doctor/doctor.tscn" id="1_6hk3s"]
+[sub_resource type="SphereMesh" id="SphereMesh_3xy3h"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dfcka"]
+[sub_resource type="GDScript" id="GDScript_6hk3s"]
+resource_name = "AnimationController"
+script/source = "extends MeshInstance3D
 
-[sub_resource type="Sky" id="Sky_jmiot"]
-sky_material = SubResource("ProceduralSkyMaterial_dfcka")
 
-[sub_resource type="Environment" id="Environment_ddush"]
-background_mode = 2
-sky = SubResource("Sky_jmiot")
+@onready var animation_player: AnimationPlayer = $\"../AnimationPlayer\"
+@export_range(0.0, 1.0) var slider: float
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jck5d"]
 
-[sub_resource type="Compositor" id="Compositor_scouk"]
+func _ready() -> void:
+	animation_player.play(\"new_animation\")
+	animation_player.pause()
+	pass
+	
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_scouk"]
+func _process(delta: float) -> void:
+	var l = animation_player.current_animation_length
+	#animation_player.seek(l * slider, true) 
+	animation_player.advance(slider)
+	pass
+"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dfcka"]
-size = Vector3(2, 0.001, 2)
+[sub_resource type="Animation" id="Animation_sl0da"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qudk4"]
+resource_name = "new_animation"
+length = 10.0
+step = 0.0333333
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.6666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -1.6666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 10, -1.6666667, -1.6666667, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dfcka"]
+_data = {
+&"RESET": SubResource("Animation_sl0da"),
+&"new_animation": SubResource("Animation_qudk4")
+}
 
 [node name="Node3D" type="Node3D" unique_id=67415916]
 
-[node name="Doctor" parent="." unique_id=1034775726 instance=ExtResource("1_6hk3s")]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1599288288]
+mesh = SubResource("SphereMesh_3xy3h")
+script = SubResource("GDScript_6hk3s")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=561287517]
-environment = SubResource("Environment_ddush")
-camera_attributes = SubResource("CameraAttributesPractical_jck5d")
-compositor = SubResource("Compositor_scouk")
+[node name="Camera3D" type="Camera3D" parent="." unique_id=337795512]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.174792, 0, 2.7572672)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=458749604]
-transform = Transform3D(7.8462234, 0, 0, 0, 7.8462234, 0, 0, 0, 7.8462234, 0, -1.6060675, 0)
-mesh = SubResource("PlaneMesh_scouk")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1166016787]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=53735101]
-shape = SubResource("BoxShape3D_dfcka")
-
-[editable path="Doctor"]
-[editable path="Doctor/doctor"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1988966208]
+libraries/ = SubResource("AnimationLibrary_dfcka")
