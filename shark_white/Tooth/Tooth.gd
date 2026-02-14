@@ -12,13 +12,12 @@ func on_hover() -> void:
 	tween = get_tree().create_tween()
 	tween.tween_method\
 	(
-		func(value): mesh_instance_3d.set_instance_shader_parameter(param_name, value),\
-		mesh_instance_3d.get_instance_shader_parameter(param_name),\
+		func(value): mesh_instance_3d.set_instance_shader_parameter(param_name_emission, value),\
+		mesh_instance_3d.get_instance_shader_parameter(param_name_emission),\
 		1.0,\
 		PICK_TIME
 	).set_ease(Tween.EASE_IN) # tween from current value to 1
 	
-	audio_stream_player.play()
 	pass
 	
 
@@ -30,12 +29,16 @@ func on_unhover() -> void:
 		tween = null
 		
 	tween = get_tree().create_tween()
-	tween.tween_method(func(value): mesh_instance_3d.set_instance_shader_parameter(param_name, value), mesh_instance_3d.get_instance_shader_parameter(param_name), 0.0, PICK_TIME).set_ease(Tween.EASE_IN) # tween from current value to 0
+	tween.tween_method\
+	(
+		func(value): mesh_instance_3d.set_instance_shader_parameter(param_name_emission, value),\
+		mesh_instance_3d.get_instance_shader_parameter(param_name_emission),\
+		0.0,\
+		PICK_TIME
+	).set_ease(Tween.EASE_IN) # tween from current value to 0
 	pass
 	
 	
 func on_activate()-> void:
 	super.on_activate()
-		
-	mesh_instance_3d.get_surface_override_material(0).set("albedo_color", Color.RED)
 	pass

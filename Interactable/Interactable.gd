@@ -17,7 +17,8 @@ var interactable_state: State = State.default
 @export var audio_stream_player: AudioStreamPlayer
 var tween: Tween
 const PICK_TIME: float = 0.1
-var param_name: StringName = "emission_energy_multiplier"
+var param_name_emission: StringName = "emission_energy_multiplier"
+var param_name_grow: StringName = "grow_multiplier"
 
 
 func _ready() -> void:
@@ -25,25 +26,30 @@ func _ready() -> void:
 
 
 func on_hover() -> void:
+	print("on_hover")
 	interactable_state = State.hovered
+	audio_stream_player.play()
 	pass
 	
 	
 func while_hover() -> void:
+	print(".")
 	pass
 	
 
 func on_unhover() -> void:		
+	print("on_unhover")
 	interactable_state = State.unhovered
 	pass
 
 
 func on_grab() -> void:
+	print("on_grab")
 	interactable_state = State.grabbed
 	pass
 
 
 func on_activate()-> void:
-	#print("pick")
+	print("on_activate")
 	interactable_state = State.activated
 	pass
