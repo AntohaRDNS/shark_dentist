@@ -7,13 +7,20 @@ var interactable_selected: Interactable
 
 
 func _physics_process(delta: float) -> void:
+
+	#if Input.is_action_just_pressed("ui_action"):
+		#if marker_3d.get_child_count() > 0:
+			#var i = marker_3d.get_child(0)
+			#i.on_release()
+			#pass
+		#pass
 	
 	if is_colliding():
 		
 		var col = get_collider()
 		
 		# if placeholder try to release Interactable
-		if col is Placeholder:
+		if col.is_in_group("Placeholder"):
 			if Input.is_action_just_pressed("ui_action"):
 				if marker_3d.get_child_count() > 0:
 					var i = marker_3d.get_child(0)
@@ -36,6 +43,8 @@ func _physics_process(delta: float) -> void:
 				else:
 					if Input.is_action_just_pressed("ui_action"):
 						if marker_3d.get_child_count() == 0: interactable_selected.on_grab(marker_3d) # grab only if not grabb
+					if Input.is_action_just_pressed("ui_activate"):
+						col.on_activate()
 					interactable_selected.while_hover()
 					pass
 					

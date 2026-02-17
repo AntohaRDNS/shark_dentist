@@ -13,3 +13,5 @@ audio_stream_player = NodePath("AudioStreamPlayer")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1646404018]
 stream = ExtResource("2_dljwh")
 volume_db = -20.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
