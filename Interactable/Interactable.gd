@@ -80,20 +80,13 @@ func on_grab(_target: Node3D) -> void:
 	pass
 	
 
-func on_release() -> void:
-	freeze = false
-	reparent(get_tree().get_root(), true)
-	pass
+#func on_release() -> void:
+	#freeze = false
+	#reparent(get_tree().get_root(), true)
+	#pass
 
 
 func on_activate()-> void:
 	print("on_activate")
 	interactable_state = State.activated
 	pass
-
-
-func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("Floor"):
-		freeze = true
-		pass
-	pass #

@@ -2,8 +2,8 @@ class_name SharkMaterialsController
 extends Node3D
 
 
-@export var body: MeshInstance3D
-@export var animation_tree: AnimationTree
+@onready var body: MeshInstance3D = $rig_deform/Skeleton3D/body
+@onready var animation_tree: AnimationTree = $AnimationTree
 @onready var doctor: Node3D = $"../Doctor"
 
 var tween: Tween
