@@ -14,4 +14,5 @@ func on_unhover() -> void:
 	
 func on_activate()-> void:
 	super.on_activate()
+	freeze = false
 	pass

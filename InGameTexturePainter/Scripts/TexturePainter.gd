@@ -18,7 +18,7 @@ func _ready() -> void:
 	#vertex_position_mapper.set_mesh(mesh_instance_low_poly)
 	vertex_position_mapper.set_mesh(mesh_instance)
 	
-	material = mesh_instance.get_surface_override_material(0)
+	material = mesh_instance.mesh.surface_get_material(0).next_pass
 	material.set_shader_parameter("SplatMapTexture", viewport_draw.get_texture())
 	
 	tex_size = viewport_draw.get_texture().get_size()
