@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ccaw5x1ipkodh"]
+
+[ext_resource type="Script" uid="uid://bewbdae1cj4pc" path="res://collision_shape_updater/collision_shape_updater.gd" id="1_7tqdj"]
+[ext_resource type="PackedScene" uid="uid://bhfruxb46pomc" path="res://collision_shape_updater/skinned_mesh_collision.glb" id="1_n12bn"]
+
+[node name="Node3D" type="Node3D" unique_id=138696935 node_paths=PackedStringArray("mesh_instance", "collision_shape")]
+script = ExtResource("1_7tqdj")
+mesh_instance = NodePath("Collection/Armature/Skeleton3D/Cylinder")
+collision_shape = NodePath("Collection/StaticBody3D/CollisionShape3D")
+
+[node name="Collection" parent="." unique_id=22117727 instance=ExtResource("1_n12bn")]
+
+[node name="Skeleton3D" parent="Collection/Armature" parent_id_path=PackedInt32Array(22117727, 1809638010) index="0" unique_id=619864990]
+bones/1/rotation = Quaternion(0, 1.2588182e-08, 0.36776853, 0.9299174)
+bones/2/rotation = Quaternion(4.775577e-16, 1.2588183e-08, 0.36776853, 0.9299174)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Collection" unique_id=297676317]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collection/StaticBody3D" unique_id=57021049]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=461584111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2217236)
+
+[editable path="Collection"]
