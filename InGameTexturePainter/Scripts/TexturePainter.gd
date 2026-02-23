@@ -16,12 +16,14 @@ func _ready() -> void:
 	await get_tree().process_frame
 	
 	#vertex_position_mapper.set_mesh(mesh_instance_low_poly)
-	vertex_position_mapper.set_mesh(mesh_instance)
+	vertex_position_mapper.set_mesh_instance(mesh_instance)
+	vertex_position_mapper.set_mesh(mesh_instance.mesh)
 	
 	material = mesh_instance.mesh.surface_get_material(0).next_pass
 	material.set_shader_parameter("SplatMapTexture", viewport_draw.get_texture())
 	
 	tex_size = viewport_draw.get_texture().get_size()
+	pass
 
 
 func _input(event: InputEvent) -> void:
@@ -30,6 +32,7 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action("ui_clear_texture") && event.is_action_pressed("ui_clear_texture"):
 		viewport_draw.clear_texture()
+	pass
 
 
 func _physics_process(_delta: float) -> void:

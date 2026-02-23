@@ -1,11 +1,13 @@
-#@tool
+@tool
 class_name CollisionShapeUpdater
 extends Node3D
 
 
 @export var mesh_instance: MeshInstance3D
 @export var collision_shape: CollisionShape3D
+@export var vertex_position_mapper: VertexPositionMapper
 @export var update_every_frame: bool = false
+
 #@export_range(0, 1) var bend: float = 0
 #@onready var animation_tree: AnimationTree = $Collection/AnimationTree
 
@@ -18,7 +20,7 @@ extends Node3D
 
 
 func _ready() -> void:
-	#_update_collision_shape()
+	_update_collision_shape()
 	pass
 
 
@@ -41,7 +43,9 @@ func _update_collision_shape() -> void:
 	if baked_mesh == null:
 		push_warning("CollisionShapeUpdater: bake_mesh_from_current_skeleton_pose() returned null.")
 		return
-
+	
+	vertex_position_mapper.set_mesh(baked_mesh)
+	
 	var trimesh_shape := baked_mesh.create_trimesh_shape()
 	if trimesh_shape == null:
 		push_warning("CollisionShapeUpdater: Failed to create trimesh shape from baked mesh.")

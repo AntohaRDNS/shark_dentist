@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	var distance = position.distance_to(doctor.position)
 	distance_remapped = remap(distance, 10.0, 14.0, 1.0, 0.0)
 	distance_remapped = clamp(distance_remapped, 0.0, 1.0)
-	#animation_tree.set("parameters/mouth_open_blend/blend_amount", distance_remapped)
+	animation_tree.set("parameters/mouth_open_blend/blend_amount", distance_remapped)
 	
 	if(not Helpers.compare_floats(distance_remapped, distance_remmaped_old)): 
 		collision_shape_updater.update_collision_shape()

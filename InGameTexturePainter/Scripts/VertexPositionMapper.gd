@@ -1,3 +1,4 @@
+class_name VertexPositionMapper
 extends Node
 
 
@@ -11,9 +12,13 @@ var _world_vertices: Array = []
 var _local_face_vertices: Array = []
 
 
-func set_mesh(_mesh_instance: MeshInstance3D) -> void:
+func set_mesh_instance(_mesh_instance: MeshInstance3D):
 	mesh_instance = _mesh_instance
-	var source_mesh = _mesh_instance.mesh
+	pass
+
+
+func set_mesh(_mesh: ArrayMesh) -> void:
+	var source_mesh = _mesh
 	
 	# Convert PrimitiveMesh to ArrayMesh if needed (MeshDataTool requires ArrayMesh)
 	if source_mesh is PrimitiveMesh:

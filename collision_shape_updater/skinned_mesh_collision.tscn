@@ -26,7 +26,6 @@ node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend
 script = ExtResource("1_7tqdj")
 mesh_instance = NodePath("Collection/Armature/Skeleton3D/Cylinder")
 collision_shape = NodePath("Collection/StaticBody3D/CollisionShape3D")
-bend = null
 
 [node name="Collection" parent="." unique_id=22117727 instance=ExtResource("1_n12bn")]
 
