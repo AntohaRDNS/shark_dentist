@@ -1,0 +1,19 @@
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://bmllx7t3rltli"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e36jd"]
+animation = &"BAKED_mouth_open"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y72hv"]
+animation = &"BAKED_default"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_j00aw"]
+
+[resource]
+nodes/output/position = Vector2(432, 144)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_y72hv")
+nodes/Animation/position = Vector2(-128, 32)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_e36jd")
+"nodes/Animation 2/position" = Vector2(-144, 224)
+nodes/mouth_open_blend/node = SubResource("AnimationNodeBlend2_j00aw")
+nodes/mouth_open_blend/position = Vector2(128, 96)
+node_connections = [&"output", 0, &"mouth_open_blend", &"mouth_open_blend", 0, &"Animation", &"mouth_open_blend", 1, &"Animation 2"]
