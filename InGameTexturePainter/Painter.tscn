@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://wnv02hhcx8l3" path="res://InGameTexturePainter/Scripts/TexturePainter.gd" id="1_2y5yo"]
 [ext_resource type="Script" uid="uid://d2f8xg6ly3coo" path="res://InGameTexturePainter/Scripts/VertexPositionMapper.gd" id="2_3tgo1"]
-[ext_resource type="Shader" uid="uid://bjv8nu4ugnk5f" path="res://InGameTexturePainter/Scripts/Painter.gdshader" id="3_cchva"]
+[ext_resource type="Shader" uid="uid://bjv8nu4ugnk5f" path="res://shark_white/material/Paint/Painter.gdshader" id="3_cchva"]
 [ext_resource type="PackedScene" uid="uid://bpk3xqy8c7hqo" path="res://InGameTexturePainter/player/Player.tscn" id="4_djokl"]
 [ext_resource type="Texture2D" uid="uid://bq8q1758p52pi" path="res://InGameTexturePainter/Brush.png" id="6_3tgo1"]
 [ext_resource type="Script" uid="uid://dd0qx2mrv87kb" path="res://InGameTexturePainter/Scripts/ViewportDraw.gd" id="6_xpfgk"]
