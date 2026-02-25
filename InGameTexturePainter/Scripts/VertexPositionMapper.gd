@@ -12,8 +12,9 @@ var _world_vertices: Array = []
 var _local_face_vertices: Array = []
 
 
-func set_mesh_instance(_mesh_instance: MeshInstance3D):
+func init(_mesh_instance: MeshInstance3D):
 	mesh_instance = _mesh_instance
+	set_mesh(mesh_instance.mesh)
 	pass
 
 

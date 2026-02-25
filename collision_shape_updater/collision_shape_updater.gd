@@ -1,4 +1,4 @@
-@tool
+#@tool
 class_name CollisionShapeUpdater
 extends Node3D
 
@@ -7,6 +7,9 @@ extends Node3D
 @export var collision_shape: CollisionShape3D
 @export var vertex_position_mapper: VertexPositionMapper
 @export var update_every_frame: bool = false
+
+var update_delay_current: float = 0
+var update_delay: float = 1
 
 #@export_range(0, 1) var bend: float = 0
 #@onready var animation_tree: AnimationTree = $Collection/AnimationTree
@@ -25,9 +28,16 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	
+	update_delay_current += _delta
+	if (update_delay_current < update_delay):
+		return
+	else:
+		update_delay_current = 0
+		
 	#animation_tree.set("parameters/Blend2/blend_amount", bend)
 	if update_every_frame:
-		_update_collision_shape()
+		update_collision_shape()
 
 
 func update_collision_shape() -> void:

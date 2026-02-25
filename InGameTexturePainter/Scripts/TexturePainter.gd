@@ -16,8 +16,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	
 	#vertex_position_mapper.set_mesh(mesh_instance_low_poly)
-	vertex_position_mapper.set_mesh_instance(mesh_instance)
-	vertex_position_mapper.set_mesh(mesh_instance.mesh)
+	vertex_position_mapper.init(mesh_instance)
 	
 	material = mesh_instance.mesh.surface_get_material(0).next_pass
 	material.set_shader_parameter("SplatMapTexture", viewport_draw.get_texture())

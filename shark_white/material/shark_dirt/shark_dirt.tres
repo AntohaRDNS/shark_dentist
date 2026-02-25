@@ -7,7 +7,7 @@
 operator = 2
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_u1enf"]
-constant = 12.0
+constant = 9.0
 
 [sub_resource type="VisualShaderNodeRemap" id="VisualShaderNodeRemap_3bmcs"]
 default_input_values = [1, 0.0, 2, 1.0, 3, 0.8, 4, 0.3]
@@ -17,6 +17,29 @@ function = 18
 
 [sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_igus7"]
 function = 31
+
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_n2f42"]
+output_port_for_preview = 0
+linked_parent_graph_frame = 16
+size = Vector2(1360, 920)
+expression = "vec2 hexSize = vec2(1.0, sqrt(3.0));
+vec2 halfHexSize = hexSize * 0.5; 
+
+vec2 firstHexUV = mod(uv, hexSize) - halfHexSize;
+vec2 secondHexUV = mod(uv - halfHexSize, hexSize) - halfHexSize;
+
+hexUV = length(firstHexUV) < length(secondHexUV) ? firstHexUV : secondHexUV;"
+
+[sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_n2f42"]
+size = Vector2(1439.9998, 1011.0002)
+title = "HEXAGON TILING"
+attached_nodes = PackedInt32Array(15)
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_n2f42"]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_e8fxo"]
+default_input_values = [0, 0.0, 1, 10.0]
+operator = 2
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_lfv8i"]
 parameter_name = "SplatMapTexture"
@@ -33,6 +56,7 @@ output_port_for_preview = 0
 default_input_values = [0, 0.0, 1, 0.1, 2, 0.5]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_r2oax"]
+expanded_output_ports = [0]
 texture = ExtResource("1_n2f42")
 texture_type = 2
 
@@ -44,6 +68,7 @@ texture = ExtResource("2_e8fxo")
 input_name = "uv"
 
 [resource]
+nodes/vertex/0/position = Vector2(976, 272)
 nodes/fragment/0/position = Vector2(1600, 288)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_lfv8i")
 nodes/fragment/2/position = Vector2(-784, 112)
@@ -56,15 +81,33 @@ nodes/fragment/7/position = Vector2(720, 1072)
 nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_uv1tc")
 nodes/fragment/8/position = Vector2(704, 576)
 nodes/fragment/9/node = SubResource("VisualShaderNodeInput_qltfh")
-nodes/fragment/9/position = Vector2(16, 928)
+nodes/fragment/9/position = Vector2(-1440, 864)
 nodes/fragment/10/node = SubResource("VisualShaderNodeVectorOp_pm7ae")
 nodes/fragment/10/position = Vector2(368, 912)
 nodes/fragment/11/node = SubResource("VisualShaderNodeFloatConstant_u1enf")
 nodes/fragment/11/position = Vector2(128, 1072)
 nodes/fragment/12/node = SubResource("VisualShaderNodeRemap_3bmcs")
-nodes/fragment/12/position = Vector2(960, 784)
+nodes/fragment/12/position = Vector2(992, 768)
 nodes/fragment/13/node = SubResource("VisualShaderNodeFloatFunc_fhctj")
 nodes/fragment/13/position = Vector2(-128, 272)
 nodes/fragment/14/node = SubResource("VisualShaderNodeFloatFunc_igus7")
 nodes/fragment/14/position = Vector2(464, 288)
-nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 7, 0, 0, 8, 8, 0, 0, 0, 9, 0, 10, 0, 11, 0, 10, 1, 10, 0, 8, 0, 10, 0, 7, 0, 8, 1, 12, 0, 12, 0, 0, 3, 3, 1, 13, 0, 13, 0, 5, 2, 5, 0, 14, 0, 14, 0, 0, 1)
+nodes/fragment/15/node = SubResource("VisualShaderNodeExpression_n2f42")
+nodes/fragment/15/position = Vector2(-1008, 800)
+nodes/fragment/15/size = Vector2(1360, 920)
+nodes/fragment/15/input_ports = "0,3,uv;"
+nodes/fragment/15/output_ports = "0,3,hexUV;"
+nodes/fragment/15/expression = "vec2 hexSize = vec2(1.0, sqrt(3.0));
+vec2 halfHexSize = hexSize * 0.5; 
+
+vec2 firstHexUV = mod(uv, hexSize) - halfHexSize;
+vec2 secondHexUV = mod(uv - halfHexSize, hexSize) - halfHexSize;
+
+hexUV = length(firstHexUV) < length(secondHexUV) ? firstHexUV : secondHexUV;"
+nodes/fragment/16/node = SubResource("VisualShaderNodeFrame_n2f42")
+nodes/fragment/16/position = Vector2(-1040, 752)
+nodes/fragment/17/node = SubResource("VisualShaderNodeVectorCompose_n2f42")
+nodes/fragment/17/position = Vector2(1264, 1216)
+nodes/fragment/18/node = SubResource("VisualShaderNodeFloatOp_e8fxo")
+nodes/fragment/18/position = Vector2(1008, 1392)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 8, 0, 0, 0, 10, 0, 8, 0, 10, 0, 7, 0, 8, 1, 12, 0, 12, 0, 0, 3, 3, 1, 13, 0, 13, 0, 5, 2, 5, 0, 14, 0, 14, 0, 0, 1, 11, 0, 10, 1, 9, 0, 15, 0, 15, 0, 10, 0, 7, 1, 17, 0, 7, 2, 17, 1, 7, 3, 18, 0, 18, 0, 17, 2, 17, 0, 0, 8)
