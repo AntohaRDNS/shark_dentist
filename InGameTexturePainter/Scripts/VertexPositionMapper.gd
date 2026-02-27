@@ -42,6 +42,10 @@ func set_mesh(_mesh: ArrayMesh) -> void:
 
 
 func _load_mesh_data() -> void:
+	_world_normals.resize(_face_count)
+	_world_vertices.clear()
+	_local_face_vertices.clear()
+	
 	for idx in range(_face_count):
 		_world_normals[idx] = mesh_instance.global_transform.basis * meshtool.get_face_normal(idx)
 		

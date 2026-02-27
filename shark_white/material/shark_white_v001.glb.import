@@ -13,9 +13,9 @@ dest_files=["res://.godot/imported/shark_white_v001.glb-85c10aed63cb60b690718977
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
-nodes/root_script=null
+nodes/root_type="Node3D"
+nodes/root_name="shark_white"
+nodes/root_script=Resource("uid://cbulqb1x6jh20", "res://shark_white/SharkMaterialsController.gd")
 nodes/apply_root_scale=true
 nodes/root_scale=6.0
 nodes/import_as_skeleton_bones=false

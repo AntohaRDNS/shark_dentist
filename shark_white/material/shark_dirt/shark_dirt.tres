@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" format=3 uid="uid://keekr78i3pmx"]
 
-[ext_resource type="Texture2D" uid="uid://clnjkvoihdwd4" path="res://shark_white/material/shark_dirt/shark_dirt_N_v002.png" id="1_n2f42"]
-[ext_resource type="Texture2D" uid="uid://b4skvibaeom1o" path="res://shark_white/material/shark_dirt/Flux2-Klein_00006_.png" id="2_e8fxo"]
+[ext_resource type="Texture2D" uid="uid://bxa507xpiwlp6" path="res://shark_white/material/shark_dirt/shark_dirt_N.png" id="1_n2f42"]
+[ext_resource type="Texture2D" uid="uid://c2gkir6c4uirc" path="res://shark_white/material/shark_dirt/Flux2-Klein_00007_.png" id="2_n2f42"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_pm7ae"]
 operator = 2
@@ -31,15 +31,9 @@ vec2 secondHexUV = mod(uv - halfHexSize, hexSize) - halfHexSize;
 hexUV = length(firstHexUV) < length(secondHexUV) ? firstHexUV : secondHexUV;"
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_n2f42"]
-size = Vector2(1439.9998, 1011.0002)
+size = Vector2(1439.9998, 1011.00006)
 title = "HEXAGON TILING"
 attached_nodes = PackedInt32Array(15)
-
-[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_n2f42"]
-
-[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_e8fxo"]
-default_input_values = [0, 0.0, 1, 10.0]
-operator = 2
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_lfv8i"]
 parameter_name = "SplatMapTexture"
@@ -62,14 +56,14 @@ texture_type = 2
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_uv1tc"]
 expanded_output_ports = [0]
-texture = ExtResource("2_e8fxo")
+texture = ExtResource("2_n2f42")
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_qltfh"]
-input_name = "uv"
+input_name = "uv2"
 
 [resource]
 nodes/vertex/0/position = Vector2(976, 272)
-nodes/fragment/0/position = Vector2(1600, 288)
+nodes/fragment/0/position = Vector2(1632, 336)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_lfv8i")
 nodes/fragment/2/position = Vector2(-784, 112)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_mj86r")
@@ -77,7 +71,7 @@ nodes/fragment/3/position = Vector2(-432, 208)
 nodes/fragment/5/node = SubResource("VisualShaderNodeSmoothStep_lfv8i")
 nodes/fragment/5/position = Vector2(144, 208)
 nodes/fragment/7/node = SubResource("VisualShaderNodeTexture_r2oax")
-nodes/fragment/7/position = Vector2(720, 1072)
+nodes/fragment/7/position = Vector2(720, 1104)
 nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_uv1tc")
 nodes/fragment/8/position = Vector2(704, 576)
 nodes/fragment/9/node = SubResource("VisualShaderNodeInput_qltfh")
@@ -106,8 +100,4 @@ vec2 secondHexUV = mod(uv - halfHexSize, hexSize) - halfHexSize;
 hexUV = length(firstHexUV) < length(secondHexUV) ? firstHexUV : secondHexUV;"
 nodes/fragment/16/node = SubResource("VisualShaderNodeFrame_n2f42")
 nodes/fragment/16/position = Vector2(-1040, 752)
-nodes/fragment/17/node = SubResource("VisualShaderNodeVectorCompose_n2f42")
-nodes/fragment/17/position = Vector2(1264, 1216)
-nodes/fragment/18/node = SubResource("VisualShaderNodeFloatOp_e8fxo")
-nodes/fragment/18/position = Vector2(1008, 1392)
-nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 8, 0, 0, 0, 10, 0, 8, 0, 10, 0, 7, 0, 8, 1, 12, 0, 12, 0, 0, 3, 3, 1, 13, 0, 13, 0, 5, 2, 5, 0, 14, 0, 14, 0, 0, 1, 11, 0, 10, 1, 9, 0, 15, 0, 15, 0, 10, 0, 7, 1, 17, 0, 7, 2, 17, 1, 7, 3, 18, 0, 18, 0, 17, 2, 17, 0, 0, 8)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 2, 10, 0, 8, 0, 8, 1, 12, 0, 12, 0, 0, 3, 3, 1, 13, 0, 13, 0, 5, 2, 5, 0, 14, 0, 14, 0, 0, 1, 11, 0, 10, 1, 9, 0, 15, 0, 8, 0, 0, 0, 10, 0, 7, 0, 7, 0, 0, 9, 15, 0, 10, 0)
