@@ -10,7 +10,7 @@ operator = 2
 constant = 9.0
 
 [sub_resource type="VisualShaderNodeRemap" id="VisualShaderNodeRemap_3bmcs"]
-default_input_values = [1, 0.0, 2, 1.0, 3, 0.8, 4, 0.3]
+default_input_values = [1, 0.0, 2, 1.0, 3, 0.9, 4, 0.5]
 
 [sub_resource type="VisualShaderNodeFloatFunc" id="VisualShaderNodeFloatFunc_fhctj"]
 function = 18
@@ -31,7 +31,7 @@ vec2 secondHexUV = mod(uv - halfHexSize, hexSize) - halfHexSize;
 hexUV = length(firstHexUV) < length(secondHexUV) ? firstHexUV : secondHexUV;"
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_n2f42"]
-size = Vector2(1439.9998, 1011.00006)
+size = Vector2(1440, 1011.00024)
 title = "HEXAGON TILING"
 attached_nodes = PackedInt32Array(15)
 
