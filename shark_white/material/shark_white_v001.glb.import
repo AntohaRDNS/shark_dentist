@@ -44,7 +44,7 @@ _subresources={
 "use_external/fallback_path": "res://shark_white/material/shark_body.material",
 "use_external/path": "uid://cys7fow01hgl8"
 },
-"shark_eye": {
+"shark_eyes": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://shark_white/material/shark_eye.material",
 "use_external/path": "uid://bsw6hq0dwge6e"

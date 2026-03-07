@@ -31,7 +31,7 @@ vec2 secondHexUV = mod(uv - halfHexSize, hexSize) - halfHexSize;
 hexUV = length(firstHexUV) < length(secondHexUV) ? firstHexUV : secondHexUV;"
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_n2f42"]
-size = Vector2(1440, 1011.00024)
+size = Vector2(1440, 1011)
 title = "HEXAGON TILING"
 attached_nodes = PackedInt32Array(15)
 
