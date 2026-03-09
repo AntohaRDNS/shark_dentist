@@ -86,7 +86,7 @@ func on_grab(_target: Node3D) -> void:
 	#pass
 
 
-func on_activate()-> void:
+func on_use()-> void:
 	print("on_activate")
 	interactable_state = State.activated
 	pass

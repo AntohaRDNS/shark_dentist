@@ -13,6 +13,6 @@ func on_unhover() -> void:
 	
 	
 func on_activate()-> void:
-	super.on_activate()
+	super.on_use()
 	freeze = false
 	pass

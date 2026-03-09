@@ -108,7 +108,7 @@ func _input(event):
 		IS_INPUT_PAUSED = true
 		pass
 		
-	if event.is_action_pressed("ui_action"):
+	if event.is_action_pressed("ui_use"):
 		IS_INPUT_PAUSED = false
 		pass	
 	

@@ -21,7 +21,7 @@ func _physics_process(delta: float) -> void:
 		
 		# if placeholder try to release Interactable
 		if col.is_in_group("Placeholder"):
-			if Input.is_action_just_pressed("ui_action"):
+			if Input.is_action_just_pressed("ui_grab"):
 				if marker_3d.get_child_count() > 0:
 					var i = marker_3d.get_child(0)
 					i.on_grab(col)
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 			pass
 		
 		# if col is Interactable
-		if col is Interactable:			
+		if col is Interactable:
 			# if current interactable already exist
 			if interactable_selected != null:
 				# if current interactable not new
@@ -41,9 +41,9 @@ func _physics_process(delta: float) -> void:
 					_select_interactable_cur(col)
 				# if interactable is the same
 				else:
-					if Input.is_action_just_pressed("ui_action"):
+					if Input.is_action_just_pressed("ui_grab"):
 						if marker_3d.get_child_count() == 0: interactable_selected.on_grab(marker_3d) # grab only if not grabb
-					if Input.is_action_just_pressed("ui_activate"):
+					if Input.is_action_just_pressed("ui_use"):
 						col.on_activate()
 					interactable_selected.while_hover()
 					pass
