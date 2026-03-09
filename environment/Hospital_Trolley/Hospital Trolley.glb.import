@@ -14,7 +14,7 @@ dest_files=["res://.godot/imported/Hospital Trolley.glb-22b878fbcef312fd46b1862b
 [params]
 
 nodes/root_type="Node3D"
-nodes/root_name=""
+nodes/root_name="hospital_trolley"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.465
