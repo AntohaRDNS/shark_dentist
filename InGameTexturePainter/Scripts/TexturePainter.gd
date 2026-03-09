@@ -1,3 +1,4 @@
+class_name TexturePainter
 extends Node3D
 
 @export var mesh_instance: MeshInstance3D
@@ -17,7 +18,7 @@ func _ready() -> void:
 	#vertex_position_mapper.set_mesh(mesh_instance_low_poly)
 	vertex_position_mapper.init(mesh_instance)
 	
-	material = mesh_instance.mesh.surface_get_material(0).next_pass
+	material = mesh_instance.mesh.surface_get_material(0).next_pass.next_pass
 	texture = viewport_draw.get_texture()
 	material.set_shader_parameter("SplatMapTexture", texture)
 	
@@ -25,13 +26,18 @@ func _ready() -> void:
 	pass
 
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		recheck = event.is_pressed()
-	
-	if event.is_action("ui_clear_texture") && event.is_action_pressed("ui_clear_texture"):
-		viewport_draw.clear_texture()
+func toogle(_is_enable: bool) -> void:
+	recheck = _is_enable
 	pass
+	
+	
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventMouseButton:
+		#recheck = event.is_pressed()
+	#
+	#if event.is_action("ui_clear_texture") && event.is_action_pressed("ui_clear_texture"):
+		#viewport_draw.clear_texture()
+	#pass
 
 
 func _physics_process(_delta: float) -> void:
@@ -39,7 +45,6 @@ func _physics_process(_delta: float) -> void:
 		var space_state = get_world_3d().direct_space_state
 		var camera: Camera3D = $"../../Doctor/Head/Camera3D"
 		
-		texture
 		for ray_idx in range(rays_amount):
 			var target: Vector3
 			

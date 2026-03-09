@@ -34,11 +34,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-#func _process(delta) -> void:
-	#marker_3d = $Marker3D
-	#body.material_overlay.set("shader_parameter/freeze_pos", marker_3d.position)
-	#pass
-
 
 #func _input(event: InputEvent) -> void:
 	#if event is InputEventKey:

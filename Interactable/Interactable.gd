@@ -78,15 +78,9 @@ func on_grab(_target: Node3D) -> void:
 	freeze = true
 
 	pass
-	
+
 
 #func on_release() -> void:
 	#freeze = false
 	#reparent(get_tree().get_root(), true)
 	#pass
-
-
-func on_use()-> void:
-	print("on_activate")
-	interactable_state = State.used
-	pass

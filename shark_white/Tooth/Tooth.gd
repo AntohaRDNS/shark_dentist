@@ -11,8 +11,3 @@ func on_unhover() -> void:
 	super.on_unhover()
 	pass
 	
-	
-func on_activate()-> void:
-	super.on_use()
-	freeze = false
-	pass

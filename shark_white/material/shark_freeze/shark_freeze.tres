@@ -14,8 +14,9 @@ constant = Color(0.21960784, 0.30980393, 1, 1)
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_f12bk"]
 parameter_name = "freeze_size"
 hint = 1
+max = 10.0
 default_value_enabled = true
-default_value = 0.5
+default_value = 2.0
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_lvbvt"]
 parameter_name = "freeze_pow"
@@ -46,6 +47,7 @@ varying_type = 4
 [sub_resource type="VisualShaderNodeVec3Parameter" id="VisualShaderNodeVec3Parameter_m7408"]
 parameter_name = "freeze_pos"
 default_value_enabled = true
+default_value = Vector3(-1.535, -2.278, 6.464)
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_f12bk"]
 input_name = "vertex"
@@ -70,13 +72,13 @@ nodes/fragment/0/position = Vector2(1283.9462, -293.5125)
 nodes/fragment/4/node = SubResource("VisualShaderNodeVaryingGetter_teuxk")
 nodes/fragment/4/position = Vector2(-457.21396, -314.97345)
 nodes/fragment/8/node = SubResource("VisualShaderNodeVec3Parameter_m7408")
-nodes/fragment/8/position = Vector2(-675.9295, -189.89249)
+nodes/fragment/8/position = Vector2(-640, -192)
 nodes/fragment/12/node = SubResource("VisualShaderNodeVectorDistance_teuxk")
 nodes/fragment/12/position = Vector2(-102.86141, -226.42834)
 nodes/fragment/13/node = SubResource("VisualShaderNodeRemap_6q3sj")
 nodes/fragment/13/position = Vector2(280.91806, -184.75899)
 nodes/fragment/15/node = SubResource("VisualShaderNodeSmoothStep_dx5s0")
-nodes/fragment/15/position = Vector2(624.2093, -51.027576)
+nodes/fragment/15/position = Vector2(608, -64)
 nodes/fragment/16/node = SubResource("VisualShaderNodeColorConstant_thw44")
 nodes/fragment/16/position = Vector2(897.6493, -257.82697)
 nodes/fragment/17/node = SubResource("VisualShaderNodeFloatParameter_f12bk")
@@ -86,9 +88,9 @@ nodes/fragment/18/position = Vector2(-144, 496)
 nodes/fragment/22/node = SubResource("VisualShaderNodeFloatFunc_teuxk")
 nodes/fragment/22/position = Vector2(272, 496)
 nodes/fragment/24/node = SubResource("VisualShaderNodeFloatOp_lvbvt")
-nodes/fragment/24/position = Vector2(873.77795, -52.651176)
+nodes/fragment/24/position = Vector2(896, -64)
 nodes/fragment/25/node = SubResource("VisualShaderNodeFloatParameter_teuxk")
 nodes/fragment/25/position = Vector2(-544, 384)
 nodes/fragment/26/node = SubResource("VisualShaderNodeMix_lvbvt")
 nodes/fragment/26/position = Vector2(-48, 176)
-nodes/fragment/connections = PackedInt32Array(4, 0, 12, 0, 8, 0, 12, 1, 12, 0, 13, 0, 13, 0, 15, 2, 16, 0, 0, 0, 16, 0, 0, 5, 18, 0, 22, 0, 22, 0, 15, 1, 15, 0, 24, 0, 24, 0, 0, 1, 17, 0, 26, 1, 25, 0, 26, 2, 26, 0, 13, 2)
+nodes/fragment/connections = PackedInt32Array(4, 0, 12, 0, 8, 0, 12, 1, 12, 0, 13, 0, 13, 0, 15, 2, 16, 0, 0, 0, 16, 0, 0, 5, 18, 0, 22, 0, 22, 0, 15, 1, 15, 0, 24, 0, 17, 0, 26, 1, 25, 0, 26, 2, 26, 0, 13, 2, 24, 0, 0, 1)
