@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 					if Input.is_action_just_pressed("ui_grab"):
 						if marker_3d.get_child_count() == 0: interactable_selected.on_grab(marker_3d) # grab only if not grabb
 					if Input.is_action_just_pressed("ui_use"):
-						col.on_activate()
+						col.on_use()
 					interactable_selected.while_hover()
 					pass
 					

@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1568tj0xcg77"
+uid="uid://cupayuk05c13d"
 path.s3tc="res://.godot/imported/syringe_v001_syringue_nor.webp-d335adc4bb9adb8b8e7529a197df4f33.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://environment/Syringe/syringe_v001_syringue_nor.webp"
+roughness/src_normal="res://Interactable/tools/syringe/syringe_v001_syringue_nor.webp"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

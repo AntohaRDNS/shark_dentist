@@ -8,7 +8,7 @@ enum State
 	hovered,
 	unhovered,
 	grabbed,
-	activated
+	used
 }
 var interactable_state: State = State.default
 
@@ -88,5 +88,5 @@ func on_grab(_target: Node3D) -> void:
 
 func on_use()-> void:
 	print("on_activate")
-	interactable_state = State.activated
+	interactable_state = State.used
 	pass
