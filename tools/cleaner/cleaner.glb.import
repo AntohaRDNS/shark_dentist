@@ -3,21 +3,21 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://wl48jyapdlom"
-path="res://.godot/imported/syringe_v001.glb-34187d8d61608306f3e03a484b536cbb.scn"
+uid="uid://42tptxh8cqhs"
+path="res://.godot/imported/cleaner.glb-ffa43208aa890766e28c1358d54aad0d.scn"
 
 [deps]
 
-source_file="res://Interactable/tools/syringe/syringe_v001.glb"
-dest_files=["res://.godot/imported/syringe_v001.glb-34187d8d61608306f3e03a484b536cbb.scn"]
+source_file="res://tools/cleaner/cleaner.glb"
+dest_files=["res://.godot/imported/cleaner.glb-ffa43208aa890766e28c1358d54aad0d.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="syringe"
+nodes/root_type=""
+nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.05
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -34,17 +34,9 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=1
-materials/extract_format=2
-materials/extract_path="res://tools/syringe"
-_subresources={
-"materials": {
-"Material": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://tools/syringe/Material.material",
-"use_external/path": "res://tools/syringe/Material.material"
-}
-}
-}
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

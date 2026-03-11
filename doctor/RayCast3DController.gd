@@ -20,6 +20,9 @@ func _physics_process(delta: float) -> void:
 	if is_colliding():
 		
 		var col = get_collider()
+		collision_point = get_collision_point()
+		print(col.name)
+		print_debug(col.is_in_group("Interactable"))
 		
 		# if placeholder try to release Interactable
 		if col.is_in_group("placeholder"):
@@ -31,31 +34,31 @@ func _physics_process(delta: float) -> void:
 			print(col.name)
 			pass
 		
-		# if col is Interactable
-		if col is Interactable:
+		# if col has Interactable capabilities
+		if col.is_in_group("Interactable"):
+			var i: Interactable = (col.get_node("%Interactable") as Interactable)
 			# get collision point
-			collision_point = get_collision_point()
 			# if current interactable already exist
 			if interactable_selected != null:
 				# if current interactable not new
 				# ... unhover prev interactable
-				if interactable_selected != col:
+				if interactable_selected != i:
 					_unselect_interactable_cur()
 					# ... hover new interactable
-					_select_interactable_cur(col)
-				# if interactable is the same
+					_select_interactable_cur(i)
+				# if interactable is the sameww
 				else:
 					if Input.is_action_just_pressed("ui_grab"):
 						if marker_3d.get_child_count() == 0: 
 							interactable_selected.on_grab(marker_3d) # grab only if not grabb
-							if interactable_selected is Tool:
-								tools_controller.current_tool = interactable_selected
+							if col is Tool:
+								tools_controller.current_tool = col
 					interactable_selected.while_hover()
 					pass
 					
 			# if current Interactable not exist
 			else:
-				_select_interactable_cur(col)
+				_select_interactable_cur(i)
 				pass
 				
 		# if col is NOT Interactable

@@ -1,5 +1,5 @@
 class_name Interactable
-extends RigidBody3D
+extends Node3D
 
 
 enum State
@@ -7,8 +7,7 @@ enum State
 	default,
 	hovered,
 	unhovered,
-	grabbed,
-	used
+	grabbed
 }
 var interactable_state: State = State.default
 
@@ -22,6 +21,16 @@ var param_name_grow: StringName = "grow_multiplier"
 
 
 func _ready() -> void:
+	
+	#var i = str(owner.is_in_group("Interactable"))
+	#print("-------------------------")
+	#print("OWNER " + owner.name +  " IS_IN_GROUP: " + i)
+	
+	owner.add_to_group("Interactable")
+	
+	print_debug("OWNER " + owner.name +  " IS_IN_GROUP: ", owner.is_in_group("Interactable"))
+	#print("-------------------------")
+	
 	pass
 
 
@@ -75,7 +84,6 @@ func on_grab(_target: Node3D) -> void:
 	
 	position = _target.position
 	reparent(_target, false)
-	freeze = true
 
 	pass
 

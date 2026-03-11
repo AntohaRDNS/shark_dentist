@@ -36,7 +36,7 @@ func iterate(node):
 			node_parent.add_child(tooth_)
 			tooth_.owner = node_owner
 			tooth_.name = node_name
-			tooth_.mesh_instance_3d.mesh = node_mesh
+			(tooth_.get_node("%Interactable") as Interactable).mesh_instance_3d.mesh = node_mesh
 			tooth_.position = node.position
 			tooth_.rotation = node.rotation
 			node.owner.set_editable_instance(tooth_, true)

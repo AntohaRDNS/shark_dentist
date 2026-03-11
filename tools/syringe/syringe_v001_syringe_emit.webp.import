@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhqrdr82erh5r"
-path.s3tc="res://.godot/imported/syringe_v001_syringe_metalness-syringe_roughness.webp-fc3ba550e52d7b89e072d8055b3548bc.s3tc.ctex"
+uid="uid://csu1k30cxhnru"
+path.s3tc="res://.godot/imported/syringe_v001_syringe_emit.webp-0fb1f2df040963355eeb3236ae8a84df.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "cda07995503645a7af5323bd222c0bb1"
+"md5": "7d7e0add505f58cb19881e740bb6e056"
 }
 
 [deps]
 
-source_file="res://Interactable/tools/syringe/syringe_v001_syringe_metalness-syringe_roughness.webp"
-dest_files=["res://.godot/imported/syringe_v001_syringe_metalness-syringe_roughness.webp-fc3ba550e52d7b89e072d8055b3548bc.s3tc.ctex"]
+source_file="res://tools/syringe/syringe_v001_syringe_emit.webp"
+dest_files=["res://.godot/imported/syringe_v001_syringe_emit.webp-0fb1f2df040963355eeb3236ae8a84df.s3tc.ctex"]
 
 [params]
 

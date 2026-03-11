@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ctlokhdh0glih"
-path="res://.godot/imported/Electric_Car_Jacks.glb-300d6538f47e4b23adc2902a82370adc.scn"
+path="res://.godot/imported/Electric_Car_Jacks.glb-de0e9090c95746920817c9e5d03f5135.scn"
 
 [deps]
 
-source_file="res://Interactable/tools/Electric_Car_Jacks/Electric_Car_Jacks.glb"
-dest_files=["res://.godot/imported/Electric_Car_Jacks.glb-300d6538f47e4b23adc2902a82370adc.scn"]
+source_file="res://tools/Electric_Car_Jacks/Electric_Car_Jacks.glb"
+dest_files=["res://.godot/imported/Electric_Car_Jacks.glb-de0e9090c95746920817c9e5d03f5135.scn"]
 
 [params]
 

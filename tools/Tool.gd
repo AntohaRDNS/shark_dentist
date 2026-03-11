@@ -1,6 +1,12 @@
 class_name Tool
-extends Interactable
+extends StaticBody3D
 
+enum State
+{
+	default,
+	used
+}
+var interactable_state: State = State.default
 
 func on_use()-> void:
 	print("on_use")
@@ -16,5 +22,5 @@ func while_use() -> void:
 
 func on_unuse() -> void:
 	print("on_unuse")
-	interactable_state = State.grabbed
+	interactable_state = State.default
 	pass

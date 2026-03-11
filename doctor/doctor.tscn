@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1192519235]
 cull_mask = 1
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1852008914 node_paths=PackedStringArray("tools_controller", "marker_3d") groups=["IInteractable"]]
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1852008914 node_paths=PackedStringArray("tools_controller", "marker_3d")]
 target_position = Vector3(0, 0, -10)
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 1, 0, 1)
@@ -30,7 +30,7 @@ script = ExtResource("2_k0vwo")
 tools_controller = NodePath("ToolsController")
 marker_3d = NodePath("../Marker3D")
 
-[node name="ToolsController" type="Node3D" parent="Head/Camera3D/RayCast3D" unique_id=832389208 groups=["Floor", "Grabber", "Placeholder"]]
+[node name="ToolsController" type="Node3D" parent="Head/Camera3D/RayCast3D" unique_id=832389208]
 script = ExtResource("3_4tu6d")
 
 [node name="Marker3D" type="Marker3D" parent="Head/Camera3D" unique_id=849826316]
