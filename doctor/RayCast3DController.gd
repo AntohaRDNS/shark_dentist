@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		var col = get_collider()
 		
 		# if placeholder try to release Interactable
-		if col.is_in_group("Placeholder"):
+		if col.is_in_group("placeholder"):
 			if Input.is_action_just_pressed("ui_grab"):
 				if marker_3d.get_child_count() > 0:
 					var i = marker_3d.get_child(0)

@@ -42,10 +42,7 @@ import/blender/enabled=false
 
 doctor=""
 placeholder=""
-interactable=""
-Grabber=""
-Placeholder=""
-Floor=""
+IInteractable=""
 
 [input]
 
