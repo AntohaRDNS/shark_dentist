@@ -21,16 +21,8 @@ var param_name_grow: StringName = "grow_multiplier"
 
 
 func _ready() -> void:
-	
-	#var i = str(owner.is_in_group("Interactable"))
-	#print("-------------------------")
-	#print("OWNER " + owner.name +  " IS_IN_GROUP: " + i)
-	
+	unique_name_in_owner = true # access by % sintaxis
 	owner.add_to_group("Interactable")
-	
-	print_debug("OWNER " + owner.name +  " IS_IN_GROUP: ", owner.is_in_group("Interactable"))
-	#print("-------------------------")
-	
 	pass
 
 
@@ -76,19 +68,3 @@ func on_unhover() -> void:
 		PICK_TIME
 	).set_ease(Tween.EASE_IN) # tween from current value to 0
 	pass
-
-
-func on_grab(_target: Node3D) -> void:
-	print("on_grab")
-	interactable_state = State.grabbed
-	
-	position = _target.position
-	reparent(_target, false)
-
-	pass
-
-
-#func on_release() -> void:
-	#freeze = false
-	#reparent(get_tree().get_root(), true)
-	#pass
