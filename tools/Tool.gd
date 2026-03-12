@@ -1,5 +1,5 @@
 class_name Tool
-extends StaticBody3D
+extends Area3D
 
 enum State
 {
@@ -14,6 +14,7 @@ func on_grab(_target: Node3D) -> void:
 	print("on_grab")
 	interactable_state = State.grabbed
 	position = _target.position
+	rotation = _target.rotation
 	reparent(_target, false)
 	pass
 
