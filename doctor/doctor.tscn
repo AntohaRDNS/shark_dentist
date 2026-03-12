@@ -18,17 +18,16 @@ metadata/_edit_group_ = true
 [node name="Head" type="Node3D" parent="." unique_id=793444959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412659, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1192519235]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1192519235 groups=["Camera"]]
 cull_mask = 1
 
-[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1852008914 node_paths=PackedStringArray("tools_controller", "marker_3d")]
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=1852008914 node_paths=PackedStringArray("tools_controller")]
 target_position = Vector3(0, 0, -10)
 collide_with_areas = true
 debug_shape_custom_color = Color(0, 1, 0, 1)
 debug_shape_thickness = 1
 script = ExtResource("2_k0vwo")
 tools_controller = NodePath("ToolsController")
-marker_3d = NodePath("ToolsController/Marker3D")
 
 [node name="ToolsController" type="Node3D" parent="Head/Camera3D/RayCast3D" unique_id=832389208 node_paths=PackedStringArray("marker_3d")]
 script = ExtResource("3_4tu6d")

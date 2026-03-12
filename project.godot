@@ -43,6 +43,9 @@ import/blender/enabled=false
 doctor=""
 placeholder=""
 Interactable=""
+TexturePainter=""
+SharkFreezController=""
+Camera=""
 
 [input]
 

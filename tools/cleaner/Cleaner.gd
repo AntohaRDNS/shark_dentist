@@ -2,9 +2,14 @@ class_name Cleaner
 extends Tool
 
 
-@onready var texture_painter: TexturePainter = %TexturePainter
 @onready var animation_player: AnimationPlayer = $cleaner/AnimationPlayer
+var texture_painter: TexturePainter
 
+
+func _ready() -> void:
+	(func(): texture_painter = get_tree().get_first_node_in_group("TexturePainter")).call_deferred()
+	pass
+	
 
 func on_use() -> void:
 	super.on_use()

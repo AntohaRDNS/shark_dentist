@@ -1,6 +1,7 @@
 class_name TexturePainter
 extends Node3D
 
+var camera: Camera3D
 @export var mesh_instance: MeshInstance3D
 @onready var vertex_position_mapper = $"../VertexPositionMapper"
 @onready var viewport_draw: ViewportDraw = $"../ViewportDraw"
@@ -13,6 +14,9 @@ var tex_size: Vector2
 var texture: ViewportTexture
 
 func _ready() -> void:
+	
+	(func(): camera = get_tree().get_first_node_in_group("Camera")).call_deferred() # at the end of frame, when all nodes at tree is ready
+	
 	await get_tree().process_frame
 	
 	#vertex_position_mapper.set_mesh(mesh_instance_low_poly)
@@ -43,7 +47,6 @@ func toogle(_is_enable: bool) -> void:
 func _physics_process(_delta: float) -> void:
 	if recheck:
 		var space_state = get_world_3d().direct_space_state
-		var camera: Camera3D = $"../../Doctor/Head/Camera3D"
 		
 		for ray_idx in range(rays_amount):
 			var target: Vector3

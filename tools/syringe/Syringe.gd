@@ -3,7 +3,12 @@ extends Tool
 
 
 @onready var animation_player: AnimationPlayer = $syringe/AnimationPlayer
-@onready var shark_freez_controller: SharkFreezeController = %shark_white/%SharkFreezController
+var shark_freez_controller: SharkFreezeController
+
+
+func _ready() -> void:
+	(func(): shark_freez_controller = get_tree().get_first_node_in_group("SharkFreezController")).call_deferred() # wait until all tree nodes in scene is ready
+	pass
 
 
 func on_use() -> void:
