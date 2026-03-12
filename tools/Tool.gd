@@ -10,6 +10,7 @@ enum State
 var tool_state: State = State.default
 
 @export var placeholder: Node3D
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 
 func on_grab(_target: Node3D) -> void:
 	print("on_grab")
+	audio_stream_player.play()
 	tool_state = State.grabbed
 	position = _target.position
 	rotation = _target.rotation
