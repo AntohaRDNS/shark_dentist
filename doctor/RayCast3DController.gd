@@ -19,29 +19,30 @@ func _physics_process(delta: float) -> void:
 	if is_colliding():
 		
 		var col = get_collider()
+		var subscene_root = Helpers.get_instanced_scene_root(col)
+			
 		collision_point = get_collision_point()
 		
 		# if placeholder try to release Interactable
-		if col.is_in_group("placeholder"):
+		if subscene_root.is_in_group("placeholder"):
 			if Input.is_action_just_pressed("ui_grab"):
 				#if marker_3d.get_child_count() > 0:
 					#var i = marker_3d.get_child(0)
 					#i.on_grab(col)
 					pass
-			print(col.name)
 			pass
 			
-		if col is Tool:
+		if subscene_root is Tool:
 			if Input.is_action_just_pressed("ui_grab"):
 				
 				if tools_controller.tool_current != null:
 					tools_controller.tool_current.on_release()
 				
-				tools_controller.set_tool(col)
+				tools_controller.set_tool(subscene_root)
 		
 		# if col has Interactable capabilities
-		if col.is_in_group("Interactable"):
-			var i: Interactable = (col.get_node("%Interactable") as Interactable)
+		if subscene_root.is_in_group("Interactable"):
+			var i: Interactable = (subscene_root.get_node("%Interactable") as Interactable)
 			# get collision point
 			# if current interactable already exist
 			if interactable_selected != null:

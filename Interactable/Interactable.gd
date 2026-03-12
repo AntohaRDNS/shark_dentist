@@ -23,6 +23,11 @@ var param_name_grow: StringName = "grow_multiplier"
 func _ready() -> void:
 	unique_name_in_owner = true # access by % sintaxis
 	owner.add_to_group("Interactable")
+	# add all CollisionObject3D at current scene to Interactable group
+	#for c in owner.get_children():
+		#if c is CollisionObject3D:
+			#c.add_to_group("Interactable")
+		#pass
 	pass
 
 
