@@ -7,38 +7,47 @@ enum State
 	grabbed,
 	used
 }
-var interactable_state: State = State.default
+var tool_state: State = State.default
 
+@export var placeholder: Node3D
+
+
+func _ready() -> void:
+	pass
+	
 
 func on_grab(_target: Node3D) -> void:
 	print("on_grab")
-	interactable_state = State.grabbed
+	tool_state = State.grabbed
 	position = _target.position
 	rotation = _target.rotation
 	reparent(_target, false)
 	pass
 
 
-#func on_release() -> void:
-	#freeze = false
-	#reparent(get_tree().get_root(), true)
-	#pass
+func on_release() -> void: # return to placeholder
+	print("on_release")
+	tool_state = State.default
+	position = Vector3.ZERO
+	rotation = Vector3.ZERO
+	reparent(placeholder, false)
+	pass
 
 
 func on_use()-> void:
 	print("on_use")
-	interactable_state = State.used
+	tool_state = State.used
 	pass
 	
 	
 func while_use() -> void:
 	print("while_use")
-	interactable_state = State.used
+	tool_state = State.used
 	pass
 
 
 func on_unuse() -> void:
 	print("on_unuse")
-	interactable_state = State.grabbed
+	tool_state = State.grabbed
 	pass
 	

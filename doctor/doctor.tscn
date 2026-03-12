@@ -28,12 +28,13 @@ debug_shape_custom_color = Color(0, 1, 0, 1)
 debug_shape_thickness = 1
 script = ExtResource("2_k0vwo")
 tools_controller = NodePath("ToolsController")
-marker_3d = NodePath("../Marker3D")
+marker_3d = NodePath("ToolsController/Marker3D")
 
-[node name="ToolsController" type="Node3D" parent="Head/Camera3D/RayCast3D" unique_id=832389208]
+[node name="ToolsController" type="Node3D" parent="Head/Camera3D/RayCast3D" unique_id=832389208 node_paths=PackedStringArray("marker_3d")]
 script = ExtResource("3_4tu6d")
+marker_3d = NodePath("Marker3D")
 
-[node name="Marker3D" type="Marker3D" parent="Head/Camera3D" unique_id=849826316]
+[node name="Marker3D" type="Marker3D" parent="Head/Camera3D/RayCast3D/ToolsController" unique_id=849826316]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.13696307, -0.2640381, -0.5203677)
 gizmo_extents = 0.95
 

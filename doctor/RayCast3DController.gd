@@ -2,7 +2,6 @@ class_name RayCast3DController
 extends RayCast3D
 
 @export var tools_controller: ToolsController
-@export var marker_3d: Marker3D
 
 static var interactable_selected: Interactable
 static var collision_point: Vector3
@@ -25,12 +24,20 @@ func _physics_process(delta: float) -> void:
 		# if placeholder try to release Interactable
 		if col.is_in_group("placeholder"):
 			if Input.is_action_just_pressed("ui_grab"):
-				if marker_3d.get_child_count() > 0:
-					var i = marker_3d.get_child(0)
-					i.on_grab(col)
+				#if marker_3d.get_child_count() > 0:
+					#var i = marker_3d.get_child(0)
+					#i.on_grab(col)
 					pass
 			print(col.name)
 			pass
+			
+		if col is Tool:
+			if Input.is_action_just_pressed("ui_grab"):
+				
+				if tools_controller.tool_current != null:
+					tools_controller.tool_current.on_release()
+				
+				tools_controller.set_tool(col)
 		
 		# if col has Interactable capabilities
 		if col.is_in_group("Interactable"):
@@ -47,11 +54,6 @@ func _physics_process(delta: float) -> void:
 				# if interactable is the same
 				else:
 					interactable_selected.while_hover()
-					if Input.is_action_just_pressed("ui_grab"):
-						if col is Tool:
-							if marker_3d.get_child_count() == 0: 
-								col.on_grab(marker_3d) # grab only if not grabb
-								tools_controller.current_tool = col
 					pass
 					
 			# if current Interactable not exist
