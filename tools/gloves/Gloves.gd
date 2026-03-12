@@ -1,14 +1,19 @@
 class_name Gloves
 extends Tool
 
-
+var body_part: BodyPart
 var grab_joint: ConeTwistJoint3D
 var grab_anchor: StaticBody3D
 var grabbed_bone: PhysicalBone3D
 
 
 func on_use():
-	grabbed_bone = $Skeleton3D/bone_3  # adjust path as needed
+	if (RayCast3DController.subscene_root is not BodyPart):
+		return
+		
+	body_part = RayCast3DController.subscene_root as BodyPart
+		
+	grabbed_bone = body_part.grab_target  # adjust path as needed
 
 	grab_anchor = StaticBody3D.new()
 	grab_anchor.global_transform = grabbed_bone.global_transform

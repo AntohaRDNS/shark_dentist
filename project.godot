@@ -46,7 +46,6 @@ Interactable=""
 TexturePainter=""
 SharkFreezController=""
 Camera=""
-BodyPart=""
 
 [input]
 

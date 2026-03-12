@@ -4,6 +4,8 @@ extends RayCast3D
 @export var tools_controller: ToolsController
 
 static var interactable_selected: Interactable
+static var col: CollisionObject3D
+static var subscene_root: Node
 static var collision_point: Vector3
 
 
@@ -18,8 +20,8 @@ func _physics_process(delta: float) -> void:
 	
 	if is_colliding():
 		
-		var col = get_collider()
-		var subscene_root = Helpers.get_instanced_scene_root(col)
+		col = get_collider()
+		subscene_root = Helpers.get_instanced_scene_root(col)
 			
 		collision_point = get_collision_point()
 		
@@ -31,7 +33,10 @@ func _physics_process(delta: float) -> void:
 					#i.on_grab(col)
 					pass
 			pass
-			
+		
+		if subscene_root is BodyPart:
+			pass
+		
 		if subscene_root is Tool:
 			if Input.is_action_just_pressed("ui_grab"):
 				
